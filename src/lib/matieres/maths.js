@@ -1,9 +1,9 @@
-import P1 from '../../data/referentiel/maths/P1.json'
-import P2 from '../../data/referentiel/maths/P2.json'
-import P3 from '../../data/referentiel/maths/P3.json'
-import P4 from '../../data/referentiel/maths/P4.json'
-import P5 from '../../data/referentiel/maths/P5.json'
-import P6 from '../../data/referentiel/maths/P6.json'
+import P1 from '../../data/referentiel/maths/P1.json' with { type: 'json' }
+import P2 from '../../data/referentiel/maths/P2.json' with { type: 'json' }
+import P3 from '../../data/referentiel/maths/P3.json' with { type: 'json' }
+import P4 from '../../data/referentiel/maths/P4.json' with { type: 'json' }
+import P5 from '../../data/referentiel/maths/P5.json' with { type: 'json' }
+import P6 from '../../data/referentiel/maths/P6.json' with { type: 'json' }
 
 export const ANNEES = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6']
 
