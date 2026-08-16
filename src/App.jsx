@@ -58,7 +58,7 @@ export default function App() {
 
       <footer className="plai-footer no-print">
         <p>ProgressActif — outil PLAI, Pôle Territorial de la Ville de Liège</p>
-        <p>Différenciation ancrée sur le Référentiel de Mathématiques du tronc commun FWB</p>
+        <p>Différenciation ancrée sur les référentiels du tronc commun FWB — maths, français</p>
       </footer>
     </div>
   )

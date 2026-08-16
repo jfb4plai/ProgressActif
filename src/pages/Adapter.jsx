@@ -1,6 +1,12 @@
 import { useState, useMemo } from 'react'
-import { ANNEES, champsDisponibles } from '../lib/matieres/maths'
+import * as Maths from '../lib/matieres/maths'
+import * as Francais from '../lib/matieres/francais'
 import { exportNiveauxDocx } from '../lib/exportDocx'
+
+const MATIERES = {
+  maths: { label: 'Maths', module: Maths, labelChamp: 'Champ du référentiel', aideChamp: 'Le domaine mathématique travaillé par l\'exercice (ex. Géométrie, Nombres). Détermine quels attendus seront utilisés pour calibrer les 3 niveaux.', labelSousPoint: 'Sous-point précis', aideSousPoint: 'Le sous-point exact du référentiel que l\'exercice mobilise. Si vous hésitez entre deux, choisissez celui qui décrit le mieux ce que l\'élève doit produire, pas juste le thème général.' },
+  francais: { label: 'Français', module: Francais, labelChamp: 'Rubrique du référentiel', aideChamp: 'La rubrique du référentiel de français travaillée par l\'exercice (ex. lecture, grammaire, vocabulaire). Détermine quels attendus et quels descripteurs (fluence, % de formes correctes) seront utilisés.', labelSousPoint: 'Item précis', aideSousPoint: 'Le savoir ou savoir-faire exact que l\'exercice mobilise dans cette rubrique.' },
+}
 
 const LABELS = {
   soutien: 'Soutien',
@@ -35,6 +41,7 @@ function NiveauCard({ cle, niveau, onChangeEnonce }) {
 }
 
 export default function Adapter() {
+  const [matiere, setMatiere] = useState('maths')
   const [annee, setAnnee] = useState('P2')
   const [champLabel, setChampLabel] = useState('')
   const [codeSousPoint, setCodeSousPoint] = useState('')
@@ -43,11 +50,19 @@ export default function Adapter() {
   const [erreur, setErreur] = useState('')
   const [enCours, setEnCours] = useState(false)
 
-  const champs = useMemo(() => champsDisponibles(annee), [annee])
+  const conf = MATIERES[matiere]
+  const champs = useMemo(() => conf.module.champsDisponibles(annee), [conf, annee])
   const sousPoints = useMemo(
     () => champs.find(c => c.champ === champLabel)?.sous_points ?? [],
     [champs, champLabel]
   )
+
+  function changerMatiere(m) {
+    setMatiere(m)
+    setChampLabel('')
+    setCodeSousPoint('')
+    setResultat(null)
+  }
 
   async function generer() {
     setErreur('')
@@ -61,7 +76,7 @@ export default function Adapter() {
       const resp = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ matiere: 'maths', anneeDeclaree: annee, champLabel, codeSousPoint, exerciceTexte }),
+        body: JSON.stringify({ matiere, anneeDeclaree: annee, champLabel, codeSousPoint, exerciceTexte }),
       })
       const data = await resp.json()
       if (!resp.ok) throw new Error(data.error ?? 'Erreur inconnue')
@@ -84,15 +99,26 @@ export default function Adapter() {
   return (
     <div className="plai-container plai-section">
       <div className="no-print">
-      <span className="plai-badge">Différenciation par attendus — maths</span>
+      <span className="plai-badge">Différenciation par attendus</span>
       <h2>Adapter un exercice</h2>
 
       {erreur && <div className="plai-error">{erreur}</div>}
 
       <div className="plai-field">
+        <label className="plai-label" htmlFor="matiere">Matière</label>
+        <select id="matiere" className="plai-input" value={matiere} onChange={e => changerMatiere(e.target.value)}>
+          {Object.entries(MATIERES).map(([key, m]) => <option key={key} value={key}>{m.label}</option>)}
+        </select>
+        <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
+          Chaque matière a sa propre logique de calibrage — le référentiel de français n'ancre pas les
+          3 niveaux de la même façon que les maths.
+        </p>
+      </div>
+
+      <div className="plai-field">
         <label className="plai-label" htmlFor="annee">Année de la classe</label>
         <select id="annee" className="plai-input" value={annee} onChange={e => { setAnnee(e.target.value); setChampLabel(''); setCodeSousPoint('') }}>
-          {ANNEES.map(a => <option key={a} value={a}>{a}</option>)}
+          {conf.module.ANNEES.map(a => <option key={a} value={a}>{a}</option>)}
         </select>
         <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
           L'année pour laquelle l'exercice a été conçu — pas l'année de chaque élève. Les 3 niveaux
@@ -101,27 +127,25 @@ export default function Adapter() {
       </div>
 
       <div className="plai-field">
-        <label className="plai-label" htmlFor="champ">Champ du référentiel</label>
+        <label className="plai-label" htmlFor="champ">{conf.labelChamp}</label>
         <select id="champ" className="plai-input" value={champLabel} onChange={e => { setChampLabel(e.target.value); setCodeSousPoint('') }}>
-          <option value="">— choisir un champ —</option>
-          {champs.map(c => <option key={c.champ} value={c.champ}>{c.champ} — {c.titre}</option>)}
+          <option value="">— choisir —</option>
+          {champs.map(c => <option key={c.champ} value={c.champ}>{c.champ}{c.titre ? ` — ${c.titre}` : ''}</option>)}
         </select>
         <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
-          Le domaine mathématique travaillé par l'exercice (ex. Géométrie, Nombres). Détermine quels
-          attendus seront utilisés pour calibrer les 3 niveaux.
+          {conf.aideChamp}
         </p>
       </div>
 
       {champLabel && (
         <div className="plai-field">
-          <label className="plai-label" htmlFor="sousPoint">Sous-point précis</label>
+          <label className="plai-label" htmlFor="sousPoint">{conf.labelSousPoint}</label>
           <select id="sousPoint" className="plai-input" value={codeSousPoint} onChange={e => setCodeSousPoint(e.target.value)}>
-            <option value="">— choisir un sous-point —</option>
-            {sousPoints.map(sp => <option key={sp.code} value={sp.code}>{sp.code} — {sp.titre}</option>)}
+            <option value="">— choisir —</option>
+            {sousPoints.map(sp => <option key={sp.code} value={sp.code}>{sp.titre}</option>)}
           </select>
           <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
-            Le sous-point exact du référentiel que l'exercice mobilise. Si vous hésitez entre deux,
-            choisissez celui qui décrit le mieux ce que l'élève doit produire, pas juste le thème général.
+            {conf.aideSousPoint}
           </p>
         </div>
       )}
@@ -132,7 +156,9 @@ export default function Adapter() {
           id="exercice"
           className="plai-input"
           rows={6}
-          placeholder={'Ex. : "Léa a 8 billes. Elle en gagne 5 pendant la récré. Combien de billes a-t-elle maintenant ?"'}
+          placeholder={matiere === 'maths'
+            ? 'Ex. : "Léa a 8 billes. Elle en gagne 5 pendant la récré. Combien de billes a-t-elle maintenant ?"'
+            : 'Ex. : "Quel pronom remplace Nolan ? ......."'}
           value={exerciceTexte}
           onChange={e => setExerciceTexte(e.target.value)}
         />
@@ -150,7 +176,7 @@ export default function Adapter() {
       {resultat && (
         <div style={{ marginTop: '2rem' }} id="zone-resultat">
           <p className="impression-titre" style={{ display: 'none' }}>
-            ProgressActif — {annee} — {champLabel} — {codeSousPoint}
+            ProgressActif — {conf.label} — {annee} — {champLabel}
           </p>
 
           {resultat.verification?.ecart_detecte ? (

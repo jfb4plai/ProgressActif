@@ -1,0 +1,524 @@
+{
+  "annee": "P2",
+  "matiere": "francais",
+  "source": "Référentiel de Français et Langues Anciennes - Tronc commun FWB, p.53-69",
+  "descripteurs_transversaux": {
+    "palier_lecteur_attendu": "lecteur débutant",
+    "fluence_lecture_mots_par_minute": 70,
+    "palier_scripteur_attendu": "scripteur débutant",
+    "pourcentage_formes_correctes_ecriture": 50,
+    "caracteristiques_texte_accessible": [
+      "un sujet familier",
+      "un contenu faisant référence à des concepts et à des repères culturels connus",
+      "une structure favorisant l'anticipation",
+      "la présence de sous-titres, de titres et de paragraphes",
+      "des illustrations redondantes, complémentaires ou contradictoires par rapport au texte",
+      "des référents de pronoms facilement identifiables",
+      "des phrases comportant peu de subordonnées mais contenant des marqueurs de relation connus des élèves",
+      "une mise en page aérée et écriture en caractères de grande taille"
+    ],
+    "contexte_annuel": "L'objectif principal de la 2e année primaire reste l'apprentissage de la lecture, indissociable de l'apprentissage de l'écriture. L'enjeu de cette année scolaire est l'automatisation du décodage (visée LIRE) et de l'encodage de mots (visée ÉCRIRE). Le code continue à faire l'objet d'un enseignement qui mène les élèves vers une maitrise des correspondances graphophonétiques fréquentes (simples ou complexes). En fin de 2e année primaire, les élèves sont capables de s'appuyer sur leur connaissance du code pour lire et écrire (notamment des mots nouveaux ou moins fréquents). Par ailleurs, leur niveau de fluence* est en progression. En 2e année primaire, les élèves sont progressivement amenés à lire et à produire des textes de longueur variable. Les unités de communication qui les composent (la phrase et le mot) continuent à être étudiées, par l'observation, dans leur délimitation et leur sens. Les élèves maitrisent un nombre croissant de caractéristiques graphiques de la phrase ainsi que les termes du langage technique de la lecture-écriture (phrase, mot, ligne…). La conjugaison au présent des verbes usuels en -ER, « avoir » et « être » est maitrisée à l'oral (visée PARLER). Pour s'approprier progressivement le fonctionnement de la langue, les élèves développent un « savoir observer » visant à dégager des différences et des similitudes de formes en contexte signifiant. Ce savoir-faire, conciliant les visées LIRE et PARLER, leur permettra en 3e année primaire de dégager des régularités qui fondent les règles d'orthographe grammaticale et les termes du langage technique de la grammaire (métalangage*). D'autres aspects, communs aux quatre visées, sont aussi travaillés comme la maitrise et l'utilisation d'un lexique courant ou spécifique à une thématique ou à une discipline. En fin de 2e année primaire, les élèves maitrisent la liste des mots à haute fréquence mentionnée dans le référentiel. Comme en 1re année primaire, ces apprentissages langagiers sont envisagés comme des éléments porteurs de sens. La mobilisation de stratégies de compréhension (visées LIRE et ÉCOUTER) s'automatise progressivement et s'exerce sur des textes d'envergure et de résistance plus importantes. Il en va de même pour les stratégies de production d'un message écrit ou oral (visées PARLER et ÉCRIRE) dépliées en savoirs et savoir-faire, qui aident les élèves à produire des textes de plus en plus détaillés en dissociant l'examen du contenu (révision) et de la forme (correction). Comme l'indique le schéma de progression des compétences du lecteur, en 2e année primaire, le niveau attendu de lecture pour tous est le niveau de « lecteur débutant ». À ce niveau, l'élève maitrise la plupart des correspondances graphophonétiques, ce qui lui permet d'identifier un vaste ensemble de mots. Ses démarches de reconnaissance et de décodage sont automatisées et il corrige lui-même ses erreurs d'identification des mots écrits. Sa fluence* en lecture est en constante progression : elle approche 70 mots lus correctement par minute. L'élève de ce niveau accroit sa capacité à combiner ses habiletés en identification de mots et ses stratégies de compréhension face à des textes de genres variés et adaptés à son niveau scolaire ; il aborde des textes courts de manière autonome. Pour comprendre ces textes, il mobilise de manière consciente et contrôlée un éventail de stratégies de compréhension* et d'interprétation* : il répond à des questions sur les éléments principaux d'une histoire, émet des hypothèses, reformule le contenu, infère un élément implicite, établit des liens entre une histoire et son vécu personnel… Le lecteur débutant s'engage volontiers dans des activités de lecture et développe des affinités vis-à-vis de certains genres textuels. Il prend progressivement l'habitude d'assigner lui-même un but à sa lecture, qu'il s'agisse de lire pour échanger avec ses condisciples ou de prendre connaissance d'un document pour réaliser une tâche ou pour acquérir de nouvelles connaissances. En fin de 2e année primaire, le niveau attendu est le niveau de « scripteur débutant ». À ce niveau, l'élève maitrise les concepts liés à l'écrit. Il maitrise certaines conventions de l'écrit (majuscule, point) et certains organisateurs textuels. Il utilise les lettres qu'il connait pour écrire des mots nouveaux (encodage). Il orthographie correctement les mots fréquents et progresse graduellement de l'orthographe phonologique à l'orthographe conventionnelle. Ses textes personnels, rédigés avec la possibilité de recourir aux référentiels de la classe, contiennent 50 % de formes correctes. L'élève exprime ses idées en textes courts composés de phrases simples, en tenant compte du destinataire et de l'intention. Il comprend certaines caractéristiques des genres textuels* (issus du croisement des intentions* et des structures dominantes de textes*). Le scripteur débutant s'initie aux composantes* de la production d'écrits (planification, mise en texte, révision, correction), en mobilisant des stratégies et des procédés littéraires appropriés. Il progresse dans l'automatisation de son geste graphique. En principe, seuls les savoirs et les savoir-faire à ancrer en 2e année primaire sont mentionnés. Par conséquent, c'est la consultation des contenus de 1re année primaire qui donne une vue complète des apprentissages à entretenir et à développer. Toutefois, les notions qui se construisent sur un temps plus long et les démarches cognitives qui doivent porter sur des supports de plus en plus complexes sont dépliées sur plusieurs années scolaires."
+  },
+  "rubriques": [
+    {
+      "rubrique": "Orienter sa prise de parole, son écoute, sa lecture et son écrit",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir",
+          "contenu": "Composantes de la situation de communication.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Citer les paramètres de la communication : qui ? à qui ? pour quoi ? quoi ? où ? quand ?", "Repérer la diversité des interlocuteurs : connu/inconnu ; familier/non familier."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Termes du support de lecture (paratexte*).",
+          "visees": ["LIRE"],
+          "attendus": ["Désigner : première de couverture, illustration, titre, auteur."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Intentions de communication.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Connaitre les intentions : informer ; donner du plaisir/susciter des émotions ; enjoindre ; persuader/convaincre."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Support de communication.",
+          "visees": ["LIRE", "ÉCOUTER"],
+          "attendus": ["Identifier le support d'écoute et de lecture."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Tenir compte des paramètres de la situation de communication.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Identifier qui (l'énonciateur), à qui (le destinataire), pour quoi (l'intention dominante), quoi (le message), où et quand (le contexte) pour planifier sa prise de parole, son écoute, sa lecture et son écrit.", "S'adapter à la diversité des interlocuteurs : connu/inconnu ; familier/non familier."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Assigner un but à sa lecture ou son écoute.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Déterminer un but d'écoute selon l'intention précisée et le support utilisé.", "Utiliser les termes du support de lecture comme indices pour anticiper le contenu d'un document."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Planifier* son message oral ou écrit en tenant compte de l'intention et du destinataire.",
+          "visees": ["PARLER", "ÉCRIRE"],
+          "attendus": ["Rassembler des idées (ex. : éléments d'une situation vécue) à l'aide d'un support."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Construire un message significatif",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir",
+          "contenu": "Correspondances graphophonétiques.",
+          "visees": ["ÉCRIRE", "LIRE"],
+          "attendus": ["Connaitre les correspondances graphophonétiques fréquentes (simples ou complexes)."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Termes du langage technique de la lecture-écriture.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Désigner une lettre, une syllabe, un mot, une phrase, une ligne, un texte."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Caractéristiques graphiques de la phrase.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Désigner une minuscule, une majuscule.", "Désigner les signes de ponctuation rencontrés dans les phrases et les textes : le point, le point d'interrogation, le point d'exclamation, les guillemets, le tiret, les points de suspension."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Lexique spécifique.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Connaitre et comprendre les mots du lexique spécifique à une thématique ou à un champ disciplinaire."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Lexique courant.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Connaitre et comprendre les mots usuels traités dans les messages oraux et dans les supports de lecture de la classe.", "Connaitre les mots de la liste des mots à haute fréquence."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Règles d'orthographe lexicale : construction des mots (morphologie).",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Connaitre la notion de famille de mots.", "Connaitre les lettres muettes : qui marquent un lien avec une famille de mots ; qui ne sont pas porteuses de sens.", "Connaitre des mots contenant des graphèmes fréquents (simples ou complexes)."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Relations sémantiques entre les mots.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE", "ÉCRIRE"],
+          "attendus": ["Comprendre que les mots peuvent entretenir un lien de sens."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Conjugaison.",
+          "visees": ["PARLER"],
+          "attendus": ["Connaitre la conjugaison (sans découvrir son système) au présent, à toutes les personnes : des verbes « avoir » et « être » ; des verbes fréquents (voir liste des mots fréquents) ; des verbes en -ER avec un radical stable."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Principes de la lecture à haute voix.",
+          "visees": ["PARLER", "LIRE"],
+          "attendus": ["Connaitre les principes de la lecture à haute voix : liaisons, intonation, temps de pause."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Adaptation à la situation de communication.",
+          "visees": ["ÉCOUTER", "PARLER"],
+          "attendus": ["Connaitre des démarches pour s'adapter au contexte d'écoute : conduites sociales adéquates (attente, silence, gestes, sons) ; écoute attentive.", "Respecter le tour et le temps de parole.", "Connaitre la façon d'intervenir à la suite d'une perte de compréhension (questions, demandes de clarification).", "Connaitre des expressions pour demander la parole, pour introduire une prise de parole spontanée."],
+          "_a_verifier": "Comme pour P1, cet item et les trois suivants (Paramètres du corps et de la voix, Stratégies/habiletés de compréhension, Composantes de la production d'un message oral ou écrit) apparaissent dans le tableau Savoirs p.59 sans nouvel intitulé de rubrique explicite ; rattachés par défaut à 'Construire un message significatif'."
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Paramètres du corps et de la voix.",
+          "visees": ["PARLER", "ÉCOUTER"],
+          "attendus": ["Repérer les paramètres de la voix : débit ; intonation ; volume.", "Repérer les paramètres du corps : posture et positions du corps ; gestuelle ; maintien du regard ; expressions faciales (mimiques, hochements de tête) ; déplacements."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Stratégies/habiletés de compréhension.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Nommer les stratégies/habiletés : se créer des images/(se) construire une représentation mentale du texte ; faire des hypothèses (anticipation et interprétation) et les vérifier ; résumer (percevoir le sens global) ; retrouver des informations (prélever des informations explicites) ; lire entre les lignes (élaborer des inférences*) ; relier le texte et les illustrations (mettre en relation le texte et les illustrations)."]
+        },
+        {
+          "type": "Savoir",
+          "contenu": "Composantes de la production d'un message oral ou écrit.",
+          "visees": ["ÉCRIRE", "PARLER"],
+          "attendus": ["Nommer les composantes de la production d'écrit : planification ; mise en texte ; révision ; correction.", "Connaitre les étapes d'une prise de parole préparée : se présenter et introduire le sujet ; présenter le sujet ; conclure."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Construire un message significatif/du sens",
+      "sous_rubrique": "Apprendre le code",
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser l'ensemble des correspondances graphophonétiques fréquentes (simples ou complexes).",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Identifier les mots en appliquant de manière flexible ces trois stratégies : par reconnaissance immédiate ; par décodage* ; par analogie.", "Copier un mot et vérifier s'il est correctement recopié.", "Encoder un mot : en effectuant les conversions phonème-graphème ; en utilisant sa mémoire ; en utilisant ses connaissances orthographiques."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser les caractéristiques graphiques de la phrase.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Reconnaitre la majuscule (début de phrase, noms propres familiers) et le point comme marqueurs délimitant la phrase.", "Reconnaitre les guillemets, le tiret et les points de suspension comme marqueurs de sens.", "Utiliser la majuscule et le point, le point d'interrogation, le point d'exclamation dans sa production comme marqueurs délimitant la phrase."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Développer une lecture fluide (fluence*).",
+          "visees": ["LIRE"],
+          "attendus": ["Lire avec exactitude, rapidité et expression des phrases rencontrées dans les supports de lecture en approchant les 70 mots lus correctement par minute."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Construire un message significatif/du sens",
+      "sous_rubrique": "Construire du sens à l'aide de stratégies",
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Structurer sa pensée dans des échanges oraux réflexifs (croisement avec les autres disciplines).",
+          "visees": ["PARLER"],
+          "attendus": ["Mettre en mots sa pensée : reformuler une consigne ou une information lue ou entendue ; verbaliser l'action en cours de réalisation ; verbaliser ce qui a été appris ; exprimer une émotion ; verbaliser un raisonnement ou une incompréhension."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Construire sa prise de parole spontanée ou préparée.",
+          "visees": ["PARLER"],
+          "attendus": ["Évoquer ce que l'on connait du sujet.", "Oser proposer des idées nouvelles.", "Oser s'exprimer en dépit des maladresses syntaxiques, de répétitions et des hésitations dans les formulations.", "Proposer diverses formulations."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "(Se) Construire une représentation mentale du contenu du texte.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Exprimer une représentation mentale du contenu du texte (entendu) par un moyen verbal ou non verbal (phrase, dessin, création…)."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Émettre des hypothèses d'anticipation et d'interprétation puis les vérifier.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Formuler au moins une hypothèse d'anticipation et d'interprétation et la vérifier.", "Mettre en relation le sens du texte (entendu) avec son vécu.", "Exprimer avec ses mots une suite plausible au récit.", "Confronter les significations construites personnellement au texte (entendu) et à celles élaborées par les pairs."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Prélever des informations explicites.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Formuler au moins trois informations explicites essentielles contenues dans un texte entendu.", "Repérer des informations essentielles contenues dans un texte sur la base d'un questionnement amené par l'enseignant.", "Reformuler des informations essentielles contenues dans un texte au départ d'une question posée."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Élaborer des inférences.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Déduire des informations implicites à partir des liens exprimés entre les éléments du message, de son vécu, de ses connaissances.", "Déduire une information implicite en reliant deux informations explicites proches dans le texte."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Percevoir le sens global.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Exprimer avec ses mots le sens global du message entendu à l'aide d'un support proposé ou choisi.", "Reformuler une idée essentielle du message entendu dégagée collectivement.", "Effectuer une tâche simple correspondant à la consigne entendue.", "Formuler l'idée principale d'un texte.", "Décrire la chronologie d'un texte simple et structuré.", "Expliquer les liens logiques existant entre les idées du texte.", "Reformuler ou exécuter un enchainement de deux consignes écrites."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Distinguer le réel (factuel) et l'imaginaire (fictionnel).",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Dégager et reformuler : les éléments réels d'un récit ; les éléments imaginaires d'un récit."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Mettre en relation le texte et les illustrations.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Relier les informations explicites du texte aux indices fournis par l'illustration."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Adopter une lecture respectueuse du contenu du message (droits du texte).",
+          "visees": ["LIRE", "ÉCOUTER"],
+          "attendus": ["Construire le sens du message en restant fidèle au contenu lu."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Pratiquer une lecture participative.",
+          "visees": ["LIRE", "PARLER", "ÉCOUTER"],
+          "attendus": ["Exprimer une impression, une opinion, un ressenti, un avis.", "Partager ses impressions."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Pratiquer une lecture distanciée*.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Identifier le narrateur.", "S'interroger sur l'intention de l'auteur."],
+          "_a_verifier": "Item nouveau par rapport à P1 (n'apparaissait pas en 1re primaire)."
+        }
+      ]
+    },
+    {
+      "rubrique": "Dégager et assurer la cohérence du message/texte",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Identifier le genre du message entendu ou d'un texte.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Dégager des caractéristiques du message entendu afin d'en identifier le genre (voir Tableau des genres proposés en page 32).", "Dégager les caractéristiques de la structure dominante d'un texte afin d'en identifier le genre (voir Tableau des genres proposés par structure textuelle).", "Identifier le titre.", "Distinguer le titre et le (corps du) texte."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Organiser son message selon une structure textuelle dominante en fonction de la situation de communication.",
+          "visees": ["PARLER", "ÉCRIRE"],
+          "attendus": ["Utiliser des connecteurs* de temps, d'espace ou de lieu et d'énumération.", "Organiser les éléments donnés d'un texte selon les caractéristiques de la structure dominante proposée par l'enseignant.", "Utiliser des mots ou expressions qui assurent l'enchainement des phrases.", "Utiliser des connecteurs de temps et d'énumération.", "Utiliser les temps appropriés en marquant le présent pour assurer la cohérence temporelle*."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser des reprises d'informations d'une phrase à l'autre pour construire du sens.",
+          "visees": ["ÉCOUTER", "LIRE", "PARLER", "ÉCRIRE"],
+          "attendus": ["Identifier un référent et sa reprise anaphorique*.", "Repérer la (les) voix du (des) locuteur(s).", "Assurer la reprise d'une information d'une phrase à l'autre en utilisant : des substituts lexicaux ; des pronoms personnels."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Traiter/utiliser les unités lexicales",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Observer le fonctionnement de la langue.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Repérer des différences et des similitudes morphologiques entre des mots écrits.", "Observer les détails orthographiques : accents, cédille…", "Comparer la forme écrite d'un mot à sa forme orale et relever les différences."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Dégager des régularités.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Observer (verbaliser) que les mots qui appartiennent à une même famille morphologique* ont un lien de sens.", "Observer (verbaliser) que les mots qui ont un lien de sens ne sont pas toujours de la même famille morphologique."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser les règles d'orthographe lexicale pour produire du sens.",
+          "visees": ["LIRE", "ÉCRIRE"],
+          "attendus": ["Émettre des hypothèses sur le sens d'un mot inconnu à partir de sa forme et le vérifier.", "Émettre des hypothèses sur l'orthographe d'un mot inconnu et laisser une trace du doute pour la vérifier.", "Associer un mot à sa famille morphologique pour justifier une lettre muette ou un graphème."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser le lexique.",
+          "visees": ["PARLER", "ÉCRIRE"],
+          "attendus": ["Utiliser, en tenant compte de la situation de communication, les mots du lexique courant et du lexique spécifique à une thématique ou un champ disciplinaire.", "Réinvestir de nouveaux mots et de nouvelles expressions ayant émergé en classe.", "Utiliser les mots de la liste des mots à haute fréquence.", "Remplacer un mot par un mot du même champ lexical*."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Traiter/utiliser les unités grammaticales",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Utiliser l'unité phrase.",
+          "visees": ["ÉCRIRE"],
+          "attendus": ["Produire un court texte qui fait sens incluant des phrases débutant par une majuscule et se terminant par un point."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Observer le fonctionnement de la langue.",
+          "visees": ["LIRE", "PARLER"],
+          "attendus": ["Repérer des différences et des similitudes de formes dans les phrases écrites (en prenant distance par rapport au contenu).", "Observer la règle générale de formation du pluriel des noms et des adjectifs en « s ».", "Observer la règle générale de formation du féminin en « e »."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Prendre appui sur les indices grammaticaux (sans les nommer) pour construire le sens du message entendu ou lu.",
+          "visees": ["ÉCOUTER", "LIRE"],
+          "attendus": ["Repérer et verbaliser les nuances apportées par les marques (audibles) nominales : du singulier/pluriel (nombre) ; du masculin/féminin (genre).", "Repérer et verbaliser les nuances apportées par les marques verbales (audibles) dans le message entendu ou lu : de personne et de nombre ; du présent, du passé, du futur (temps).", "Repérer les pronoms personnels."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Conjuguer.",
+          "visees": ["PARLER"],
+          "attendus": ["Conjuguer, à l'indicatif présent, les verbes les plus fréquents (voir liste des mots fréquents) et les verbes en -ER avec un radical stable, à toutes les personnes."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Respecter la segmentation en mots.",
+          "visees": ["ÉCRIRE"],
+          "attendus": ["Écrire en laissant des espaces entre les mots."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Assurer la présentation du message",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Structurer sa prise de parole préparée.",
+          "visees": ["PARLER"],
+          "attendus": ["Se présenter et introduire le sujet.", "Présenter le sujet.", "Conclure."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Rendre son message audible et intelligible.",
+          "visees": ["PARLER"],
+          "attendus": ["Adapter le volume, le débit de son expression, la posture, les expressions faciales et le regard.", "S'exprimer avec l'intonation adaptée en respectant les liaisons courantes.", "Utiliser un support de présentation pour appuyer son propos."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Respecter les règles de prise de parole.",
+          "visees": ["PARLER"],
+          "attendus": ["Demander la parole.", "Intervenir au moment approprié (à tour de rôle, en alternance, sur demande).", "Regarder son destinataire.", "Utiliser à bon escient des expressions types pour respecter des règles de courtoisie."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Appliquer des règles d'écoute selon la situation de communication.",
+          "visees": ["ÉCOUTER"],
+          "attendus": ["Témoigner de son écoute en : regardant l'énonciateur ; adoptant une posture d'écoute ; formulant un commentaire sur la voix (volume, débit, intonation).", "Établir un lien entre le contenu du message et un support illustré.", "S'adapter au contexte d'écoute par : des conduites sociales adéquates (attente, silence, gestes, sons) ; une écoute attentive."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Maitriser le geste graphique.",
+          "visees": ["ÉCRIRE"],
+          "attendus": ["Automatiser le tracé correct des lettres pour assurer la lisibilité et la présentation de son texte."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Apprécier, agir/réagir, réviser",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir",
+          "contenu": "Culture littéraire.",
+          "visees": ["LIRE", "ÉCOUTER"],
+          "attendus": ["Connaitre des œuvres du patrimoine littéraire (contes, légendes…) rencontrées à l'école.", "Connaitre des œuvres contemporaines marquantes pour la jeunesse rencontrées à l'école."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Interagir avec autrui.",
+          "visees": ["PARLER", "ÉCOUTER"],
+          "attendus": ["Questionner ses interlocuteurs : suite à une difficulté de compréhension ; pour en savoir plus sur le sujet.", "Répondre à des questions posées à la suite d'une prise de parole préparée.", "Formuler un avis à propos d'une présentation."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Élargir sa connaissance du monde.",
+          "visees": ["PARLER", "ÉCOUTER", "LIRE"],
+          "attendus": ["Intégrer de nouvelles informations à son réseau de connaissances et les verbaliser."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Se construire une identité de lecteur.",
+          "visees": ["ÉCOUTER", "PARLER", "LIRE"],
+          "attendus": ["Prendre appui sur ses connaissances culturelles (littéraire, scientifique, artistique…) pour identifier ses préférences (auteur, genre…)."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Réfléchir à sa pratique de lecteur.",
+          "visees": ["PARLER", "LIRE"],
+          "attendus": ["Nommer les stratégies de compréhension mises en œuvre.", "Vérifier le maintien du but de lecture assigné.", "Constater ses difficultés en lecture."]
+        }
+      ]
+    },
+    {
+      "rubrique": "Vérifier et ajuster sa production",
+      "sous_rubrique": null,
+      "items": [
+        {
+          "type": "Savoir-faire",
+          "contenu": "Évaluer une prise de parole préparée.",
+          "visees": ["PARLER"],
+          "attendus": ["Vérifier, selon la réaction du ou des destinataires, si l'intention de communication a été atteinte."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Évaluer son écoute.",
+          "visees": ["ÉCOUTER"],
+          "attendus": ["Évaluer la qualité de son écoute."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Réviser sa production.",
+          "visees": ["ÉCRIRE", "LIRE"],
+          "attendus": ["Relire son écrit en vérifiant si son contenu correspond à l'intention poursuivie.", "Ajuster sa production en fonction d'une piste de révision issue d'un échange avec l'enseignant ou avec les pairs."]
+        },
+        {
+          "type": "Savoir-faire",
+          "contenu": "Communiquer une production écrite.",
+          "visees": ["ÉCRIRE", "LIRE"],
+          "attendus": ["Corriger un mot dont l'enseignant a indiqué un emploi erroné.", "Corriger une production de son choix à l'aide d'une grille de vérification et des référentiels de la classe en vue de la partager."]
+        }
+      ]
+    }
+  ],
+  "competences_reception": {
+    "ecouter": [
+      {
+        "contenu": "Manifester sa compréhension d'un message entendu dont l'intention est d'informer.",
+        "attendus": ["En répondant à des questions ou en produisant un dessin, une phrase ou une action qui donne à voir certains des éléments suivants : l'explicite et certains éléments implicites ; des connaissances personnelles mobilisées ; l'intention de l'auteur ; les relations entre les éléments (texte-illustrations éventuelles, liens logiques)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un message entendu dont l'intention est de persuader/convaincre.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (liens logiques)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un message entendu dont l'intention est d'enjoindre.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (chronologie, liens logiques)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un message entendu dont l'intention est de donner du plaisir/susciter des émotions.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (chronologie, texte-illustrations éventuelles) ; les éléments réels et imaginaires. En imaginant une suite cohérente à un récit."]
+      },
+      {
+        "contenu": "Écouter dans une situation d'échanges.",
+        "attendus": ["Lors d'un échange en groupe : adopter une posture d'écoute attentive ; respecter les tours et les temps de parole."]
+      }
+    ],
+    "lire": [
+      {
+        "contenu": "Manifester sa compréhension d'un document dont l'intention est d'informer.",
+        "attendus": ["En répondant à des questions ou en produisant un dessin, une phrase ou une action qui donne à voir certains des éléments suivants : l'explicite et certains éléments implicites ; des connaissances personnelles mobilisées ; l'intention de l'auteur ; les relations entre les éléments (liens logiques, texte-illustrations)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un document dont l'intention est de persuader/convaincre.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (liens logique, texte-illustrations)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un document dont l'intention est d'enjoindre.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (chronologie, liens logiques, texte-illustrations)."]
+      },
+      {
+        "contenu": "Manifester sa compréhension d'un document dont l'intention est de donner du plaisir/susciter des émotions.",
+        "attendus": ["L'explicite et certains éléments implicites ; une émotion ressentie ; l'intention de l'auteur ; les relations entre les éléments (chronologie, texte-illustrations) ; les éléments réels et imaginaires. En imaginant une suite cohérente à un récit."]
+      },
+      {
+        "contenu": "Vérifier et justifier sa compréhension d'un document.",
+        "attendus": ["En répondant à des questions posées oralement, expliciter les stratégies de compréhension mobilisées : prélever des informations explicites ; élaborer une inférence ; faire des hypothèses ; relier le texte et les illustrations ; percevoir le sens global ; (se) construire une représentation mentale du texte.", "Ajuster sa compréhension d'un document après confrontation avec les pairs."]
+      }
+    ]
+  },
+  "competences_production": {
+    "ecrire": [
+      {
+        "contenu": "Écrire pour informer, donner du plaisir/susciter des émotions, persuader/convaincre, enjoindre.",
+        "attendus": ["Rédiger un écrit lisible qui combine plusieurs des éléments ci-dessous en mobilisant des ressources (référentiels) : en restant dans le sujet ; en tenant compte de l'intention et du destinataire ; en l'organisant selon une structure textuelle simple donnée ; en utilisant la majuscule et le point ; en respectant la segmentation en mots ; en orthographiant correctement les mots connus de la liste des mots à haute fréquence ; en mobilisant les ressources de la classe (référentiels)."]
+      },
+      {
+        "contenu": "Verbaliser les composantes de la production d'un écrit.",
+        "attendus": ["En répondant à des questions posées oralement, expliciter les composantes de la production d'écrits mises en œuvre : planification ; mise en texte ; révision ; correction."]
+      }
+    ],
+    "parler": [
+      {
+        "contenu": "Prendre la parole pour informer, donner du plaisir/susciter des émotions, persuader/convaincre, enjoindre (restituer un contenu/message donné).",
+        "attendus": ["Prendre la parole pour restituer un contenu/message donné avec expression : en tenant compte de l'intention et du destinataire ; en adaptant le volume, le débit, la posture, les expressions et le regard ; en utilisant les étapes d'une prise de parole préparée : se présenter, introduire le sujet, le présenter, conclure.", "En utilisant des règles de courtoisie."]
+      },
+      {
+        "contenu": "Prendre la parole pour informer, donner du plaisir/susciter des émotions, persuader/convaincre, enjoindre (produire/élaborer un message).",
+        "attendus": ["Prendre la parole pour produire/élaborer un message qui combine plusieurs des éléments ci-dessous en s'appuyant ou non sur un support de présentation : en tenant compte de l'intention et du destinataire ; en l'organisant selon une structure textuelle simple donnée ; en utilisant les organisateurs textuels adéquats ; en utilisant les substituts lexicaux ; en utilisant le lexique (courant ou spécifique à la thématique et aux champs disciplinaires) adéquat ; en mobilisant les ressources de la classe (référentiels)."]
+      },
+      {
+        "contenu": "Prendre la parole en interagissant avec autrui.",
+        "attendus": ["Prendre la parole dans un groupe : en osant s'exprimer ; en intervenant au moment approprié ; en questionnant ses interlocuteurs ; en répondant à des questions ; en respectant les règles de courtoisie."]
+      }
+    ]
+  }
+}

@@ -3,10 +3,12 @@
 // ANTHROPIC_API_KEY reste côté serveur uniquement (jamais exposée au frontend).
 
 import { construirePromptSysteme as promptMaths } from '../src/lib/matieres/maths.js'
+import { construirePromptSysteme as promptFrancais } from '../src/lib/matieres/francais.js'
 import { GENERATION_SCHEMA } from '../src/lib/matieres/_generationSchema.js'
 
 const MODULES = {
   maths: { construirePromptSysteme: promptMaths },
+  francais: { construirePromptSysteme: promptFrancais },
 }
 
 export default async function handler(req, res) {
@@ -21,7 +23,7 @@ export default async function handler(req, res) {
 
   const module = MODULES[matiere]
   if (!module) {
-    return res.status(400).json({ error: `Matière "${matiere}" non encore disponible (seul maths est actif pour l'instant).` })
+    return res.status(400).json({ error: `Matière "${matiere}" non encore disponible.` })
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY
