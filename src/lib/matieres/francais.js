@@ -19,25 +19,47 @@ export function anneePrecedente(annee) {
   return i > 0 ? ANNEES[i - 1] : null
 }
 
+// Regroupe rubriques (Savoir/Savoir-faire) ET compétences (réception/production) sous
+// une même forme { label, items[] } — sans ce regroupement, les tâches de production
+// ouverte ("Écrire pour...", "Prendre la parole pour...") restent invisibles de l'UI,
+// qui n'aurait exposé que les tableaux Savoir/Savoir-faire.
+function groupesDisponibles(annee) {
+  const c = CORPUS[annee]
+  if (!c) return []
+  const groupes = (c.rubriques ?? []).map(r => ({
+    label: r.rubrique + (r.sous_rubrique ? ` — ${r.sous_rubrique}` : ''),
+    items: r.items,
+  }))
+  const competences = [
+    ['Compétences — Écouter (réception)', c.competences_reception?.ecouter],
+    ['Compétences — Lire (réception)', c.competences_reception?.lire],
+    ['Compétences — Écrire (production)', c.competences_production?.ecrire],
+    ['Compétences — Parler (production)', c.competences_production?.parler],
+  ]
+  for (const [label, items] of competences) {
+    if (items?.length) groupes.push({ label, items })
+  }
+  return groupes
+}
+
 // Équivalent de champsDisponibles() côté maths — le français n'a pas de champs
-// numérotés, mais des rubriques nommées (stables d'une année à l'autre, cf. rapport
-// d'extraction : "vocabulaire de rubriques stable").
+// numérotés, mais des rubriques + blocs de compétences nommés (stables d'une année
+// à l'autre, cf. rapport d'extraction : "vocabulaire de rubriques stable").
 export function champsDisponibles(annee) {
-  return (CORPUS[annee]?.rubriques ?? []).map(r => ({
-    champ: r.rubrique + (r.sous_rubrique ? ` — ${r.sous_rubrique}` : ''),
+  return groupesDisponibles(annee).map(g => ({
+    champ: g.label,
     titre: '',
-    sous_points: r.items.map((it, idx) => ({ code: String(idx), titre: it.contenu, ...it })),
+    sous_points: g.items.map((it, idx) => ({ code: String(idx), titre: it.contenu, ...it })),
   }))
 }
 
 // Retrouve le même item (par son "contenu" exact) dans une autre année. Renvoie null
-// si la rubrique ou l'item n'existe pas cette année-là — le français est globalement
+// si le groupe ou l'item n'existe pas cette année-là — le français est globalement
 // plus continu que les sciences, mais rien ne garantit qu'un item précis existe partout.
-function trouverItem(annee, rubriqueLabel, contenuCible) {
-  const rubriques = CORPUS[annee]?.rubriques ?? []
-  const rubrique = rubriques.find(r => (r.rubrique + (r.sous_rubrique ? ` — ${r.sous_rubrique}` : '')) === rubriqueLabel)
-  if (!rubrique) return null
-  return rubrique.items.find(it => it.contenu === contenuCible) ?? null
+function trouverItem(annee, groupeLabel, contenuCible) {
+  const groupe = groupesDisponibles(annee).find(g => g.label === groupeLabel)
+  if (!groupe) return null
+  return groupe.items.find(it => it.contenu === contenuCible) ?? null
 }
 
 function contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint }) {
