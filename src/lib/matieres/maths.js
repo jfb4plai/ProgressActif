@@ -108,9 +108,11 @@ Pour chaque niveau (soutien / cible / dépassement), tu DOIS :
 
 ## Étape 3 — Sortie
 
-Réponds en identifiant clairement : la vérification a priori, puis les 3 niveaux avec leur attendu cité.
-Le résultat sera relu et édité par l'enseignant avant tout usage — ne cherche pas la perfection finale,
-propose une base fidèle au référentiel et argumentée.
+La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details, citant les attendus
+en cause s'il y en a) puis "niveaux.soutien/cible/depassement", chacun avec annee_reference, attendu_cite
+(citation exacte, jamais paraphrasée), levier (une phrase : ce qui change réellement à ce palier) et enonce
+(le texte complet de l'exercice, prêt à être relu). Le résultat sera relu et édité par l'enseignant avant
+tout usage — ne cherche pas la perfection finale, propose une base fidèle au référentiel et argumentée.
 
 ## Exercice source à traiter
 

@@ -3,6 +3,7 @@
 // ANTHROPIC_API_KEY reste côté serveur uniquement (jamais exposée au frontend).
 
 import { construirePromptSysteme as promptMaths } from '../src/lib/matieres/maths.js'
+import { GENERATION_SCHEMA } from '../src/lib/matieres/_generationSchema.js'
 
 const MODULES = {
   maths: { construirePromptSysteme: promptMaths },
@@ -40,6 +41,8 @@ export default async function handler(req, res) {
         model: 'claude-sonnet-4-6',
         max_tokens: 4000,
         system: systemPrompt,
+        // Sortie contrainte par schéma — pas de prose Markdown à parser côté client.
+        output_config: { format: { type: 'json_schema', schema: GENERATION_SCHEMA } },
         messages: [{ role: 'user', content: 'Traite l\'exercice source selon les 3 étapes décrites.' }],
       }),
     })
@@ -50,8 +53,9 @@ export default async function handler(req, res) {
     }
 
     const data = await resp.json()
-    const texte = data.content?.[0]?.text ?? ''
-    return res.status(200).json({ resultat: texte })
+    const texte = data.content?.[0]?.text ?? '{}'
+    const resultat = JSON.parse(texte)
+    return res.status(200).json({ resultat })
   } catch (err) {
     return res.status(500).json({ error: `Erreur serveur : ${err.message}` })
   }

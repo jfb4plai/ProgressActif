@@ -1,12 +1,44 @@
 import { useState, useMemo } from 'react'
 import { ANNEES, champsDisponibles } from '../lib/matieres/maths'
 
+const LABELS = {
+  soutien: 'Soutien',
+  cible: 'Cible',
+  depassement: 'Dépassement',
+}
+
+function NiveauCard({ cle, niveau, onChangeEnonce }) {
+  return (
+    <div className="plai-card">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
+        <strong style={{ color: 'var(--teal)', fontSize: 15 }}>{LABELS[cle]}</strong>
+        <span style={{ fontSize: 12, color: 'var(--text3)' }}>{niveau.annee_reference}</span>
+      </div>
+
+      <p style={{ fontSize: 13, color: 'var(--text2)', fontStyle: 'italic', marginBottom: 4 }}>
+        « {niveau.attendu_cite} »
+      </p>
+      <p style={{ fontSize: 12, color: 'var(--text3)', marginBottom: 10 }}>
+        {niveau.levier}
+      </p>
+
+      <textarea
+        className="plai-input"
+        rows={10}
+        value={niveau.enonce}
+        onChange={e => onChangeEnonce(cle, e.target.value)}
+        style={{ fontSize: 14 }}
+      />
+    </div>
+  )
+}
+
 export default function Adapter() {
   const [annee, setAnnee] = useState('P2')
   const [champLabel, setChampLabel] = useState('')
   const [codeSousPoint, setCodeSousPoint] = useState('')
   const [exerciceTexte, setExerciceTexte] = useState('')
-  const [resultat, setResultat] = useState('')
+  const [resultat, setResultat] = useState(null)
   const [erreur, setErreur] = useState('')
   const [enCours, setEnCours] = useState(false)
 
@@ -18,7 +50,7 @@ export default function Adapter() {
 
   async function generer() {
     setErreur('')
-    setResultat('')
+    setResultat(null)
     if (!champLabel || !codeSousPoint || !exerciceTexte.trim()) {
       setErreur('Sélectionnez un champ, un sous-point, et collez le texte de l\'exercice avant de générer.')
       return
@@ -38,6 +70,10 @@ export default function Adapter() {
     } finally {
       setEnCours(false)
     }
+  }
+
+  function modifierEnonce(cle, texte) {
+    setResultat(r => ({ ...r, niveaux: { ...r.niveaux, [cle]: { ...r.niveaux[cle], enonce: texte } } }))
   }
 
   return (
@@ -105,19 +141,27 @@ export default function Adapter() {
       </button>
 
       {resultat && (
-        <div className="plai-field" style={{ marginTop: '1.5rem' }}>
-          <label className="plai-label" htmlFor="resultat">Résultat — à relire et corriger avant tout usage</label>
-          <textarea
-            id="resultat"
-            className="plai-input"
-            rows={20}
-            value={resultat}
-            onChange={e => setResultat(e.target.value)}
-          />
-          <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
-            Zone entièrement éditable : ajustez le vocabulaire, le contexte de vos élèves, ou corrigez
-            toute vérification signalée avant d'imprimer ou d'enregistrer. Rien n'est sauvegardé
-            automatiquement.
+        <div style={{ marginTop: '2rem' }}>
+          {resultat.verification?.ecart_detecte ? (
+            <div className="plai-error">
+              <strong>Écart avec l'année déclarée</strong><br />
+              {resultat.verification.details}
+            </div>
+          ) : (
+            <div className="plai-success">
+              Aucun écart détecté — l'exercice correspond à l'attendu de {annee}.
+            </div>
+          )}
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0.75rem', marginTop: '1rem' }}>
+            {['soutien', 'cible', 'depassement'].map(cle => (
+              <NiveauCard key={cle} cle={cle} niveau={resultat.niveaux[cle]} onChangeEnonce={modifierEnonce} />
+            ))}
+          </div>
+
+          <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: '1rem' }}>
+            Chaque zone est éditable indépendamment : ajustez le vocabulaire ou le contexte de vos
+            élèves avant d'imprimer ou d'enregistrer. Rien n'est sauvegardé automatiquement.
           </p>
         </div>
       )}
