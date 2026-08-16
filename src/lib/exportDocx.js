@@ -72,6 +72,46 @@ function niveauSection(cle, niveau) {
   ]
 }
 
+function grilleSection(grille) {
+  if (!grille) return []
+  return [
+    new Paragraph({
+      children: [new TextRun({ text: 'Grille d\'évaluation — attendu cible', bold: true, color: BRAND_TEAL, size: 28 })],
+      spacing: { before: 320, after: 100 },
+      border: { bottom: { style: BorderStyle.SINGLE, size: 2, color: BRAND_TEAL } },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: `« ${grille.attendu_cite} »`, italics: true, size: 20, color: GRAY_TEXT })],
+      spacing: { after: 160 },
+    }),
+    new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      rows: [
+        new TableRow({
+          children: [
+            new TableCell({
+              width: { size: 50, type: WidthType.PERCENTAGE },
+              shading: { type: ShadingType.CLEAR, fill: GRAY_LIGHT },
+              children: [new Paragraph({ children: [new TextRun({ text: 'Critère', bold: true, size: 20, color: GRAY_TEXT })] })],
+            }),
+            new TableCell({
+              width: { size: 50, type: WidthType.PERCENTAGE },
+              shading: { type: ShadingType.CLEAR, fill: GRAY_LIGHT },
+              children: [new Paragraph({ children: [new TextRun({ text: 'Indicateur de réussite', bold: true, size: 20, color: GRAY_TEXT })] })],
+            }),
+          ],
+        }),
+        ...grille.criteres.map(c => new TableRow({
+          children: [
+            new TableCell({ width: { size: 50, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: c.critere, size: 20 })] })] }),
+            new TableCell({ width: { size: 50, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: c.indicateur_reussite, size: 20 })] })] }),
+          ],
+        })),
+      ],
+    }),
+  ]
+}
+
 function pageFooter() {
   return {
     default: new Footer({
@@ -88,7 +128,7 @@ function pageFooter() {
   }
 }
 
-export async function exportNiveauxDocx({ anneeDeclaree, champLabel, codeSousPoint, verification, niveaux }) {
+export async function exportNiveauxDocx({ anneeDeclaree, champLabel, codeSousPoint, verification, niveaux, grille }) {
   const date = new Date().toLocaleDateString('fr-BE', { day: 'numeric', month: 'long', year: 'numeric' })
 
   const doc = new Document({
@@ -138,6 +178,7 @@ export async function exportNiveauxDocx({ anneeDeclaree, champLabel, codeSousPoi
         ...niveauSection('soutien', niveaux.soutien),
         ...niveauSection('cible', niveaux.cible),
         ...niveauSection('depassement', niveaux.depassement),
+        ...grilleSection(grille),
       ],
     }],
   })

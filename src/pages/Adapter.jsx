@@ -14,6 +14,43 @@ const LABELS = {
   depassement: 'Dépassement',
 }
 
+function GrilleEvaluation({ grille, onChangeCritere }) {
+  return (
+    <div className="plai-card" style={{ marginTop: '1.5rem' }}>
+      <strong style={{ color: 'var(--teal)', fontSize: 15 }}>Grille d'évaluation — attendu cible</strong>
+      <p style={{ fontSize: 13, color: 'var(--text2)', fontStyle: 'italic', margin: '4px 0 12px' }}>
+        « {grille.attendu_cite} »
+      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        {grille.criteres.map((c, i) => (
+          <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+            <textarea
+              className="plai-input"
+              rows={2}
+              value={c.critere}
+              onChange={e => onChangeCritere(i, 'critere', e.target.value)}
+              style={{ fontSize: 13 }}
+              aria-label={`Critère ${i + 1}`}
+            />
+            <textarea
+              className="plai-input"
+              rows={2}
+              value={c.indicateur_reussite}
+              onChange={e => onChangeCritere(i, 'indicateur_reussite', e.target.value)}
+              style={{ fontSize: 13 }}
+              aria-label={`Indicateur de réussite ${i + 1}`}
+            />
+          </div>
+        ))}
+      </div>
+      <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 10 }}>
+        Colonne de gauche : le critère observable. Colonne de droite : ce qui permet de dire qu'il est
+        atteint. Ajustez le vocabulaire à vos élèves avant d'imprimer.
+      </p>
+    </div>
+  )
+}
+
 function NiveauCard({ cle, niveau, onChangeEnonce }) {
   return (
     <div className="plai-card">
@@ -92,8 +129,18 @@ export default function Adapter() {
     setResultat(r => ({ ...r, niveaux: { ...r.niveaux, [cle]: { ...r.niveaux[cle], enonce: texte } } }))
   }
 
+  function modifierCritere(index, champ, texte) {
+    setResultat(r => ({
+      ...r,
+      grille: {
+        ...r.grille,
+        criteres: r.grille.criteres.map((c, i) => i === index ? { ...c, [champ]: texte } : c),
+      },
+    }))
+  }
+
   function telechargerWord() {
-    exportNiveauxDocx({ anneeDeclaree: annee, champLabel, codeSousPoint, verification: resultat.verification, niveaux: resultat.niveaux })
+    exportNiveauxDocx({ anneeDeclaree: annee, champLabel, codeSousPoint, verification: resultat.verification, niveaux: resultat.niveaux, grille: resultat.grille })
   }
 
   return (
@@ -195,6 +242,8 @@ export default function Adapter() {
               <NiveauCard key={cle} cle={cle} niveau={resultat.niveaux[cle]} onChangeEnonce={modifierEnonce} />
             ))}
           </div>
+
+          {resultat.grille && <GrilleEvaluation grille={resultat.grille} onChangeCritere={modifierCritere} />}
 
           <p style={{ fontSize: 13, color: 'var(--text3)', margin: '1rem 0' }}>
             Chaque zone est éditable indépendamment : ajustez le vocabulaire ou le contexte de vos

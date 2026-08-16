@@ -154,13 +154,21 @@ Pour chaque niveau (soutien / cible / dépassement), tu DOIS :
 - si le sous-point plafonne, l'assumer et l'expliquer dans "levier" plutôt que d'inventer une différence
   qui n'existe pas dans le texte du référentiel
 
-## Étape 3 — Sortie
+## Étape 3 — Grille d'évaluation (attendu cible uniquement)
 
-La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details) puis
-"niveaux.soutien/cible/depassement", chacun avec annee_reference, attendu_cite (citation exacte de
-l'attendu OU du descripteur transversal utilisé), levier (une phrase : ce qui change réellement à ce
-palier) et enonce (le texte complet de l'exercice, prêt à être relu). Le résultat sera relu et édité par
-l'enseignant avant tout usage.
+Construis une grille de 3 à 6 critères observables, décomposés à partir du texte exact de l'attendu (ou
+descripteur transversal) cité pour le niveau CIBLE — jamais un critère générique du type "bonne
+orthographe". Si l'attendu combine plusieurs exigences (ex. réception ET production, ou plusieurs
+substituts à reconnaître), sépare-les en critères distincts, chacun avec un indicateur de réussite concret
+et cochable en classe.
+
+## Étape 4 — Sortie
+
+La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details), "niveaux.soutien/
+cible/depassement" (chacun avec annee_reference, attendu_cite (citation exacte de l'attendu OU du
+descripteur transversal utilisé), levier (une phrase : ce qui change réellement à ce palier) et enonce (le
+texte complet de l'exercice, prêt à être relu)), puis "grille" (attendu_cite identique à celui du niveau
+cible, et criteres[] issus de l'étape 3). Le résultat sera relu et édité par l'enseignant avant tout usage.
 
 ## Exercice source à traiter
 

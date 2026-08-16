@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-6',
-        max_tokens: 4000,
+        max_tokens: 6000,
         system: systemPrompt,
         // Sortie contrainte par schéma — pas de prose Markdown à parser côté client.
         output_config: { format: { type: 'json_schema', schema: GENERATION_SCHEMA } },

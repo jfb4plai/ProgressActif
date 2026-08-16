@@ -106,13 +106,22 @@ Pour chaque niveau (soutien / cible / dépassement), tu DOIS :
   antérieur sous une forme plus simple, ne la réserve pas au dépassement — intègre-la sous forme adaptée
   dès le soutien si le référentiel le permet
 
-## Étape 3 — Sortie
+## Étape 3 — Grille d'évaluation (attendu cible uniquement)
+
+Construis une grille de 3 à 6 critères observables, décomposés à partir du texte exact de l'attendu cité
+pour le niveau CIBLE (jamais un critère générique du type "l'élève a bien travaillé"). Chaque exigence
+mentionnée dans l'attendu (ex. "en traduisant par un dessin", "en effectuant les calculs", "en communiquant
+le résultat avec précision") devient un critère séparé, avec un indicateur de réussite concret et cochable
+en classe — pas une reformulation abstraite du critère.
+
+## Étape 4 — Sortie
 
 La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details, citant les attendus
-en cause s'il y en a) puis "niveaux.soutien/cible/depassement", chacun avec annee_reference, attendu_cite
+en cause s'il y en a), "niveaux.soutien/cible/depassement" (chacun avec annee_reference, attendu_cite
 (citation exacte, jamais paraphrasée), levier (une phrase : ce qui change réellement à ce palier) et enonce
-(le texte complet de l'exercice, prêt à être relu). Le résultat sera relu et édité par l'enseignant avant
-tout usage — ne cherche pas la perfection finale, propose une base fidèle au référentiel et argumentée.
+(le texte complet de l'exercice, prêt à être relu)), puis "grille" (attendu_cite identique à celui du niveau
+cible, et criteres[] issus de l'étape 3). Le résultat sera relu et édité par l'enseignant avant tout usage —
+ne cherche pas la perfection finale, propose une base fidèle au référentiel et argumentée.
 
 ## Exercice source à traiter
 
