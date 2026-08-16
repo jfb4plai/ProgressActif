@@ -13,9 +13,9 @@ export default function App() {
         </div>
       </nav>
 
-      <div className="plai-banner">
-        Ces 3 niveaux visent le même attendu — un élève DYS a besoin d'une adaptation de forme, pas
-        seulement de difficulté. <a href="https://diffactif.vercel.app" target="_blank" rel="noreferrer">DiffActif</a> ajuste consignes, mise en page et support par profil (dyslexie, TDAH, dyspraxie…).
+      <div className="plai-banner" style={{ position: 'sticky', top: 52, zIndex: 99 }}>
+        Feuille papier, pas de version numérique ? Passez d'abord par{' '}
+        <a href="https://diffactif.vercel.app" target="_blank" rel="noreferrer">DiffActif</a> : le scan devient une version en Aménagements Universels, qui sert de base ici. Ensuite, ces 3 niveaux visent le même attendu — un élève DYS a besoin d'une adaptation de forme, pas seulement de difficulté. DiffActif l'ajuste par profil réel (dyslexie, TDAH, dyspraxie…), jamais un aménagement générique unique.
       </div>
 
       <div className="plai-container plai-section" style={{ borderTop: 'none' }}>
