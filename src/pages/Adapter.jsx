@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import * as Maths from '../lib/matieres/maths'
 import * as Francais from '../lib/matieres/francais'
 import { exportNiveauxDocx } from '../lib/exportDocx'
+import { STORAGE_KEY as CLE_CODE_ACCES } from '../components/AccessGate'
 
 const MATIERES = {
   maths: { label: 'Maths', module: Maths, labelChamp: 'Champ du référentiel', aideChamp: 'Le domaine mathématique travaillé par l\'exercice (ex. Géométrie, Nombres). Détermine quels attendus seront utilisés pour calibrer les 3 niveaux.', labelSousPoint: 'Sous-point précis', aideSousPoint: 'Le sous-point exact du référentiel que l\'exercice mobilise. Si vous hésitez entre deux, choisissez celui qui décrit le mieux ce que l\'élève doit produire, pas juste le thème général.' },
@@ -110,12 +111,17 @@ export default function Adapter() {
     }
     setEnCours(true)
     try {
+      const codeAcces = sessionStorage.getItem(CLE_CODE_ACCES) ?? ''
       const resp = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ matiere, anneeDeclaree: annee, champLabel, codeSousPoint, exerciceTexte }),
+        body: JSON.stringify({ matiere, anneeDeclaree: annee, champLabel, codeSousPoint, exerciceTexte, codeAcces }),
       })
       const data = await resp.json()
+      if (resp.status === 401) {
+        sessionStorage.removeItem(CLE_CODE_ACCES)
+        throw new Error('Code d\'accès invalide ou expiré. Rechargez la page pour le ressaisir.')
+      }
       if (!resp.ok) throw new Error(data.error ?? 'Erreur inconnue')
       setResultat(data.resultat)
     } catch (e) {

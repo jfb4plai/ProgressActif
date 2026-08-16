@@ -1,4 +1,5 @@
 import Adapter from './pages/Adapter'
+import AccessGate from './components/AccessGate'
 
 export default function App() {
   return (
@@ -54,7 +55,9 @@ export default function App() {
         </p>
       </div>
 
-      <Adapter />
+      <AccessGate>
+        <Adapter />
+      </AccessGate>
 
       <footer className="plai-footer no-print">
         <p>ProgressActif — outil PLAI, Pôle Territorial de la Ville de Liège</p>

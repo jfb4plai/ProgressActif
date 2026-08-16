@@ -16,9 +16,18 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Méthode non autorisée' })
   }
 
-  const { matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte } = req.body ?? {}
+  const { matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, codeAcces } = req.body ?? {}
   if (!matiere || !anneeDeclaree || !champLabel || !codeSousPoint || !exerciceTexte) {
     return res.status(400).json({ error: 'Champs requis manquants (matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte).' })
+  }
+
+  // Gate bêta interne — pas d'auth complète, juste un code partagé pour éviter qu'un usage
+  // hors du cercle bêta ne consomme la clé Anthropic sans limite. Échec fermé : si le code
+  // n'est pas configuré côté serveur, l'endpoint refuse plutôt que de tourner sans protection.
+  const codeAttendu = process.env.PROGRESSACTIF_ACCESS_CODE
+  if (!codeAttendu) return res.status(500).json({ error: 'Code d\'accès non configuré côté serveur (PROGRESSACTIF_ACCESS_CODE).' })
+  if (codeAcces !== codeAttendu) {
+    return res.status(401).json({ error: 'Code d\'accès invalide.' })
   }
 
   const module = MODULES[matiere]
