@@ -22,8 +22,9 @@ const GRILLE = {
     attendu_cite: { type: 'string', description: 'Citation exacte de l\'attendu cible sur lequel la grille s\'appuie — doit correspondre à niveaux.cible.attendu_cite.' },
     criteres: {
       type: 'array',
-      minItems: 3,
-      maxItems: 6,
+      // L'API Anthropic (output_config.format) rejette minItems/maxItems au-delà de 0/1
+      // sur les tableaux — la contrainte "3 à 6 critères" est portée par le prompt système
+      // uniquement (voir maths.js / francais.js, étape 3).
       items: {
         type: 'object',
         additionalProperties: false,
