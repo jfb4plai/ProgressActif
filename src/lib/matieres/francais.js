@@ -100,7 +100,9 @@ function formaterItem(entry) {
   if (!existe) {
     return `${annee} : (item absent — ce savoir/savoir-faire précis n'existe pas cette année-là dans le référentiel)\n${descripteursTxt}`
   }
-  return `${annee} — [${item.type}] ${item.contenu} (visées : ${item.visees.join(', ')})\nAttendus : ${item.attendus.join(' | ')}\n${descripteursTxt}`
+  const typeTxt = item.type ? `[${item.type}] ` : ''
+  const viseesTxt = item.visees?.length ? ` (visées : ${item.visees.join(', ')})` : ''
+  return `${annee} — ${typeTxt}${item.contenu}${viseesTxt}\nAttendus : ${item.attendus.join(' | ')}\n${descripteursTxt}`
 }
 
 // Prompt système du générateur français — même exigence de rigueur que maths.js,
