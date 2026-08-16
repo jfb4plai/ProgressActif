@@ -5,7 +5,7 @@ export default function App() {
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       <nav className="plai-nav">
         <a href="/" className="plai-nav-logo">
-          <img src="/plai-logo.jpg" alt="PLAI" style={{ height: 32, width: 32, borderRadius: 6 }} />
+          <img src="/plai-logo.jpg" alt="PLAI" style={{ height: 32, width: 'auto' }} />
           ProgressActif
         </a>
         <div className="plai-nav-actions">
