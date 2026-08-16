@@ -1,0 +1,58 @@
+// Vercel Serverless Function — Route : POST /api/generate
+// Body : { matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }
+// ANTHROPIC_API_KEY reste côté serveur uniquement (jamais exposée au frontend).
+
+import { construirePromptSysteme as promptMaths } from '../src/lib/matieres/maths.js'
+
+const MODULES = {
+  maths: { construirePromptSysteme: promptMaths },
+}
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Méthode non autorisée' })
+  }
+
+  const { matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte } = req.body ?? {}
+  if (!matiere || !anneeDeclaree || !champLabel || !codeSousPoint || !exerciceTexte) {
+    return res.status(400).json({ error: 'Champs requis manquants (matiere, anneeDeclaree, champLabel, codeSousPoint, exerciceTexte).' })
+  }
+
+  const module = MODULES[matiere]
+  if (!module) {
+    return res.status(400).json({ error: `Matière "${matiere}" non encore disponible (seul maths est actif pour l'instant).` })
+  }
+
+  const apiKey = process.env.ANTHROPIC_API_KEY
+  if (!apiKey) return res.status(500).json({ error: 'Clé API manquante (ANTHROPIC_API_KEY)' })
+
+  const systemPrompt = module.construirePromptSysteme({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte })
+
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 4000,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: 'Traite l\'exercice source selon les 3 étapes décrites.' }],
+      }),
+    })
+
+    if (!resp.ok) {
+      const errText = await resp.text()
+      return res.status(502).json({ error: `Erreur API Anthropic : ${errText}` })
+    }
+
+    const data = await resp.json()
+    const texte = data.content?.[0]?.text ?? ''
+    return res.status(200).json({ resultat: texte })
+  } catch (err) {
+    return res.status(500).json({ error: `Erreur serveur : ${err.message}` })
+  }
+}

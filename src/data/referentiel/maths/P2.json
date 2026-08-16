@@ -1,0 +1,543 @@
+{
+  "annee": "P2",
+  "matiere": "mathematiques",
+  "source": "Référentiel de Mathématiques - Tronc commun FWB, p.35-47",
+  "champs": [
+    {
+      "champ": "Champ 1",
+      "titre": "Des objets de l'espace à la géométrie",
+      "sous_points": [
+        {
+          "code": "1.1",
+          "titre": "(Se) repérer et communiquer des positionnements ou des déplacements",
+          "contexte_annuel": "En 1re année primaire, les élèves travaillent des positionnements et des déplacements dans l'espace 3D connu et ils interprètent des représentations de l'espace. Ils effectuent des déplacements sur une bande orientée.\nEn 2e année primaire, les élèves investissent progressivement l'espace 2D tout en continuant à décoder, décrire et reproduire des positionnements et des déplacements. Ils affinent leur verbalisation en utilisant du vocabulaire toujours lié à leur point de vue. Les élèves rencontrent les premiers quadrillages non codés pour y situer et placer des objets. Ils utilisent des représentations de l'espace vues du dessus pour les confronter au réel.\nEn 3e année primaire, les élèves travaillent dans l'espace 3D ou 2D ainsi que dans des quadrillages codés ou non. Ils identifient des points de repère lors de déplacements.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les visions de l'espace.",
+              "attendus": [
+                "Utiliser le vocabulaire exprimant des positions absolues : à côté de, contre, à l'intérieur, à l'extérieur, entre, sous, sur, dans, hors, autour de, face à face, dos à dos.",
+                "Utiliser le vocabulaire exprimant des positions relatives (liées au regard) : devant, derrière, à droite, à gauche, en haut, en bas, au-dessus, en dessous, en face de.",
+                "Utiliser le vocabulaire exprimant des positions ordinales : premier, deuxième, troisième… dernier ; au début, à la fin, avant, après."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les déplacements.",
+              "attendus": ["Utiliser le vocabulaire décrivant un déplacement, tel que : monter, descendre, avancer, reculer, s'éloigner, se rapprocher, faire demi-tour…"]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les systèmes de repérage : du quadrillage au repère orthonormé.",
+              "attendus": ["Utiliser le vocabulaire lié aux quadrillages : colonnes, lignes et cases."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Situer, placer un objet ou soi-même.",
+              "attendus": [
+                "Situer (exprimer la position absolue, relative ou ordinale) un objet ou soi-même avec le vocabulaire adéquat : dans l'espace 3D (réel, vécu, miniaturisé) et 2D (dessin, croquis, photo) ; selon le point de vue de l'élève.",
+                "Placer un objet/soi-même selon des consignes données ou un modèle observé dans l'espace 3D (réel, vécu, miniaturisé) et 2D (dessin, croquis, photo)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Déplacer un objet ou soi-même.",
+              "attendus": [
+                "Se déplacer ou déplacer un objet dans l'espace 3D (réel, vécu, miniaturisé) en suivant a minima trois consignes orales consécutives.",
+                "Expliquer oralement un déplacement vécu à l'aide du vocabulaire adéquat, en identifiant au moins trois points de repère."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Situer, placer et déplacer un objet ou soi-même sur une bande orientée.",
+              "attendus": [
+                "Situer (exprimer la position absolue ou ordinale) un objet sur une bande orientée.",
+                "Placer un objet sur une bande orientée. Ex. : jeux de parcours.",
+                "Déplacer un objet ou soi-même d'une quantité donnée, sur une bande orientée."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Situer, placer un objet dans un quadrillage.",
+              "attendus": [
+                "Situer (exprimer la position) un objet dans un quadrillage non codé.",
+                "Placer un objet dans un quadrillage non codé, selon des consignes données ou un modèle observé."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Lire, interpréter des représentations de l'espace et les confronter au réel.",
+              "attendus": ["Réaliser dans un espace connu un agencement spatial de minimum six objets correspondant à une vue du dessus donnée."]
+            }
+          ]
+        },
+        {
+          "code": "1.2",
+          "titre": "Appréhender et représenter des objets de l'espace",
+          "contexte_annuel": "En 1re année primaire, les élèves identifient, reproduisent et construisent quelques solides et figures simples.\nEn 2e année primaire, les élèves commencent à identifier des composantes, des caractéristiques des solides et des figures simples. Les rectangles et les carrés sont plus spécialement travaillés. L'utilisation de la latte s'affine. La notion d'axe de symétrie s'initie au travers de pliages entre autres. Les élèves identifient, par empreinte ou contournement, les différentes faces de solides. Ils associent certaines figures en vue d'en construire de nouvelles.\nEn 3e année primaire, les élèves entament l'étude de certains triangles. Ils découvrent les médianes, les diagonales et les axes de symétrie des figures rencontrées. L'identification des solides s'élargit et les premiers développements du cube apparaissent.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les figures, leurs composantes, leurs caractéristiques et leurs propriétés.",
+              "attendus": [
+                "Identifier carré, rectangle, triangle, disque, cercle.",
+                "Désigner des composantes des figures travaillées : côtés (longueur, largeur), sommets, angles (droits).",
+                "Énoncer des caractéristiques des figures travaillées : le nombre de côtés, les côtés isométriques et le nombre d'angles droits."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les solides, leurs composantes, leurs caractéristiques et leurs représentations planes.",
+              "attendus": [
+                "Identifier cube, parallélépipède rectangle, cylindre, sphère.",
+                "Identifier les composantes des solides travaillés : faces, arêtes, sommets.",
+                "Énoncer des caractéristiques des solides travaillés : nombre de faces, forme des faces, des faces de même empreinte."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire des solides et des figures avec du matériel varié.",
+              "attendus": [
+                "Reproduire des solides à partir de modèles 3D donnés, avec du matériel varié (pâte à modeler, blocs ou boites à assembler…).",
+                "Reproduire et construire des rectangles et des carrés par découpage, par pliage et avec du matériel varié."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Tracer des figures.",
+              "attendus": [
+                "Utiliser la latte pour tracer, sur papier vierge, une droite en passant par un, puis deux points donnés.",
+                "Tracer des quadrilatères et/ou des triangles à la latte en repassant sur des « segments de droite » formés par des faisceaux de droites donnés.",
+                "Tracer un rectangle, un carré à la latte sur papier tramé, avec et sans contraintes."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Tracer des axes de symétrie, des diagonales, des médianes et des hauteurs.",
+              "attendus": [
+                "Matérialiser un axe de symétrie d'un dessin ou d'une image symétrique par pliage.",
+                "Produire une forme symétrique par découpage, à partir d'une feuille pliée en deux."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer des figures.",
+              "attendus": ["Comparer les caractéristiques (selon les côtés et les angles) d'un carré et d'un rectangle."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Établir des relations entre des objets en 3D et leurs représentations en 2D.",
+              "attendus": [
+                "Associer une empreinte produite à une des faces d'un solide.",
+                "Dessiner le contour de toutes les faces d'une boite parallélépipédique ou cubique donnée."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Articuler, en contexte, les caractéristiques puis les propriétés des solides et des figures, les procédés de construction et de traçage.",
+              "attendus": ["Construire un carré, un rectangle, un triangle en assemblant des figures données (rectangles, carrés, triangles)."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 2",
+      "titre": "Des grandeurs à la relation entre variables",
+      "sous_points": [
+        {
+          "code": "2.1",
+          "titre": "Concevoir des grandeurs",
+          "contexte_annuel": "En 1re année primaire, les élèves travaillent principalement la comparaison d'objets. Ils approchent essentiellement les longueurs, les masses et les durées.\nEn 2e année primaire, les élèves poursuivent leur découverte des grandeurs vues en 1re année et en explorent une autre : la capacité. Les actions concrètes se diversifient.\nEn 3e année primaire, les élèves élargissent leurs connaissances des grandeurs vues précédemment.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'identification et la comparaison de grandeurs d'objets.",
+              "attendus": [
+                "Utiliser de manière adéquate les termes relatifs aux grandeurs : la longueur, la masse, la capacité, le cout.",
+                "Énoncer la comparaison de deux objets selon une de leurs grandeurs (plus, moins, aussi) : selon leur longueur : court/long ; selon leur masse : léger/lourd ; selon la capacité : vide/plein, rempli.",
+                "Utiliser de manière adéquate les termes : longueur, largeur, épaisseur, profondeur, hauteur, le contour de."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "La notion de durée et la comparaison de durées.",
+              "attendus": ["Utiliser, en situation, le vocabulaire en référence à la durée en utilisant des expressions telles que « le temps utilisé pour… », « telle activité dure… », « la durée de… »."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer des objets selon une de leurs grandeurs.",
+              "attendus": [
+                "Comparer des objets donnés par rapport à un objet de référence (plus/moins/aussi) selon la longueur, la masse, la capacité.",
+                "Classer des objets donnés selon leur masse."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer les durées d'évènements, d'actions.",
+              "attendus": [
+                "Trier des situations données évoquant des durées subjectives (ressenties) ou objectives.",
+                "Comparer la durée de situations vécues (dure moins longtemps/plus longtemps que…) en référence à la minute, à plusieurs minutes (5 minutes, 10 minutes…)."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Choisir, en situations significatives, des démarches pertinentes de comparaisons de grandeurs d'objets.",
+              "attendus": ["Choisir une action concrète pertinente pour comparer des masses (regarder, juxtaposer, soupeser…), verbaliser son action et expliquer son choix."]
+            }
+          ]
+        },
+        {
+          "code": "2.2",
+          "titre": "Agir sur des grandeurs",
+          "contexte_annuel": "En 1re année primaire, les élèves mesurent des longueurs à l'aide d'étalons non conventionnels, travaillent sur les durées et commencent à manipuler les euros.\nEn 2e année primaire, les élèves découvrent le mètre, le centimètre, le kilogramme et le litre au travers de manipulations proches de leur vécu. Une attention particulière est portée sur la construction des images mentales permettant de donner du sens aux unités conventionnelles. La construction du temps se poursuit.\nEn 3e année primaire, sans négliger les manipulations et la construction des images mentales, les élèves sont amenés à jongler avec de plus en plus d'unités conventionnelles.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'usage des unités conventionnelles.",
+              "attendus": [
+                "Utiliser et symboliser : le mètre (m), le centimètre (cm) ; le kilogramme (kg) ; le litre (l) ; l'euro (€).",
+                "Distinguer dans l'expression d'une grandeur mesurée : la grandeur, la mesure et l'unité de mesure."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Le mesurage de durées.",
+              "attendus": [
+                "Utiliser et symboliser l'heure (h), la minute (min), la seconde (s).",
+                "Énoncer la relation de durée : 1 minute = 60 secondes."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Mesurer des grandeurs.",
+              "attendus": [
+                "Effectuer le mesurage d'une masse/d'une capacité à l'aide d'un étalon non conventionnel choisi (familier et commun à la classe) et en exprimer le résultat approximatif.",
+                "Effectuer le mesurage de la masse d'objets de l'environnement en utilisant la balance à plateaux et des kilogrammes étalons, et en exprimer le résultat approximatif.",
+                "Effectuer le mesurage de la capacité d'objets de l'environnement par transvasement d'un récipient de 1 litre, et en exprimer le résultat approximatif.",
+                "Effectuer le mesurage d'une longueur d'objets de l'environnement et en exprimer le résultat, en utilisant l'unité conventionnelle adéquate (m, cm)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser des instruments, des supports pour exprimer un instant dans le temps et mesurer des durées.",
+              "attendus": [
+                "Lire l'heure sur un support : analogique : en heures ; digital : en heures et minutes.",
+                "Utiliser une horloge analogique avec trotteuse pour déterminer la durée d'une action courte (moins de 3 minutes)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Choisir une grandeur et justifier son choix.",
+              "attendus": [
+                "Choisir, parmi plusieurs estimations d'une longueur (en m ou en cm), d'une masse (en kg), celle qui est la plus plausible et justifier son choix.",
+                "Choisir, parmi plusieurs estimations de durées d'actions données en secondes, celle qui est la plus plausible et justifier son choix."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire le système des unités conventionnelles.",
+              "attendus": [
+                "Donner du sens aux unités conventionnelles travaillées en les associant à des objets de l'environnement. Ex. : un litre, c'est la contenance de… ; un kilogramme, c'est lourd comme… ; 10 euros c'est le prix de…",
+                "Lister des objets de la vie courante dont une grandeur se mesure avec l'unité travaillée."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Donner du sens à des unités usuelles de durées.",
+              "attendus": ["Associer la seconde, la minute, quelques minutes, 15 minutes à la durée de situations vécues."]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Articuler, en situations significatives, l'estimation d'une grandeur, son mesurage (avec les références et les outils adéquats) et l'appréciation du résultat.",
+              "attendus": [
+                "Établir une collection d'au moins cinq objets de référence d'une mesure de grandeur donnée (longueur, masse) en estimant, en mesurant ou en cherchant l'information pour se créer des images mentales de ces mesures.",
+                "Estimer la longueur d'un objet en référence à une unité conventionnelle choisie (le mètre, le centimètre) avant d'effectuer le mesurage.",
+                "Estimer, en soupesant, la masse d'un objet en référence à une unité conventionnelle choisie (le kilogramme) avant d'effectuer le mesurage sur une balance."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Recourir à divers outils et stratégies pour anticiper, représenter, planifier, gérer le temps en fonction de divers buts.",
+              "attendus": [
+                "Estimer, en secondes, la durée d'une activité à vivre ou vécue.",
+                "Quantifier la durée nécessaire à la réalisation d'une activité connue et régulièrement vécue (de la seconde à 15 minutes) pour en vérifier la faisabilité dans le laps de temps défini ou imparti."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes dans des situations contextualisées.",
+              "attendus": ["Résoudre des problèmes d'achats mobilisant : maximum trois articles ; des prix entiers jusqu'à 100 €."]
+            }
+          ]
+        },
+        {
+          "code": "2.3",
+          "titre": "Opérer sur des grandeurs – périmètres, aires et volumes",
+          "contexte_annuel": "En 1re année primaire, les élèves abordent les notions de périmètre et d'aire par la manipulation sans formalisation.\nEn 2e année primaire, les élèves affinent leur perception de la notion de périmètre.\nEn 3e année primaire, les notions de périmètre et d'aire se précisent.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les périmètres et les aires de figures, les volumes de solides.",
+              "attendus": [
+                "Énoncer que le périmètre d'une figure est la longueur de son contour.",
+                "Montrer la surface d'une figure."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire et utiliser des démarches pour calculer des périmètres, des aires de figures et des volumes de solides.",
+              "attendus": ["Tracer dans un quadrillage, le contour déplié d'un rectangle ou d'un carré, en identifiant chaque côté."]
+            }
+          ]
+        },
+        {
+          "code": "2.4",
+          "titre": "Agir puis opérer sur des grandeurs – fractions",
+          "contexte_annuel": "En 1re année primaire, les apprentissages permettent d'identifier, de nommer, de fractionner et de reconstituer l'unité sur la base de fractionnements en demis et en quarts.\nEn 2e année primaire, les élèves fractionnent des grandeurs d'objets selon leur longueur, leur capacité, leur aire en demis et en quarts, au départ de matériels variés. Ils représentent les fractions étudiées.\nEn 3e année primaire, si les fractions étudiées se précisent, il s'agit d'être un peu plus formel dans la mise en mots (dénominateur, numérateur), d'appréhender la notion d'équivalence et de travailler sur la sériation de grandeurs fractionnées de même dénominateur.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "La notion de fraction partage en lien avec des grandeurs d'objets (réels, représentés).",
+              "attendus": ["Utiliser de manière adéquate les expressions : un demi de…, la moitié de…, un quart de…, deux quarts de…, trois quarts de…"]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Exploiter des fractions partages et des pourcentages.",
+              "attendus": [
+                "Fractionner des objets selon leur longueur, leur capacité, leur aire en demis et en quarts, au départ de matériels variés.",
+                "Recomposer l'unité à partir de demi(s) et de quarts.",
+                "Représenter des fractions partages plus petites ou égales à l'unité : 1/2, 1/4 de…",
+                "Reconnaitre des représentations de fractions partages plus petites ou égales à l'unité : 1/2, 1/4 de…"
+              ]
+            }
+          ]
+        },
+        {
+          "code": "2.5",
+          "titre": "Mettre en relation des grandeurs",
+          "contexte_annuel": "En 1re année primaire, les élèves appréhendent la proportionnalité directe, en situations vécues et manipulées, pour déterminer une quantité proportionnelle (nombres de… pour…).\nEn 2e année primaire, les élèves abordent la proportionnalité au travers de situations vécues et manipulées, ils les représentent de manière figurative.\nEn 3e année primaire, les élèves représentent des situations contextualisées de proportionnalité directe par représentations mathématiques (des graphes fléchés ou des tableaux de proportionnalité).",
+          "items": [
+            {
+              "type": "Savoir-faire",
+              "contenu": "Exploiter des situations de proportionnalité directe entre grandeurs.",
+              "attendus": [
+                "Déterminer une quantité dans une situation (vécue et manipulée) de proportionnalité directe (nombre de… pour…).",
+                "Représenter une situation vécue et manipulée de proportionnalité directe de manière figurative."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 3",
+      "titre": "De l'arithmétique à l'algèbre",
+      "sous_points": [
+        {
+          "code": "3.1",
+          "titre": "Appréhender le nombre puis la lettre dans tous leurs aspects",
+          "contexte_annuel": "En 1re année primaire, l'apprentissage des vingt premiers nombres s'effectue principalement par manipulation sur des collections d'objets.\nEn 2e année primaire, l'étude des nombres s'étend à 100. Les élèves créent notamment des familles de nombres et en relèvent des régularités au travers des tables. Les apprentissages reposent sur la reconnaissance et la représentation de schèmes structurés, de collections d'objets… Les élèves appréhendent les nombres par comptage, dénombrement et décomposition. Ils utilisent des symboles pour comparer, ordonner et situer ces nombres.\nEn 3e année primaire, les élèves élargissent leurs connaissances en appréhendant progressivement d'autres nombres plus grands jusqu'à 1 000. C'est en utilisant ces plus grands nombres que la numération de position se construit.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Des nombres naturels aux nombres réels.",
+              "attendus": [
+                "Utiliser des nombres pour communiquer : une quantité ; une position ; un numéro ; …",
+                "Utiliser de manière adéquate les noms des rangs : unité, dizaine.",
+                "Associer le nom d'un nombre (naturel jusqu'à 100) à son écriture en chiffres.",
+                "Reconnaitre les nombres de 1 à 100 en s'appuyant sur : des schèmes structurés mettant en évidence les nombres 2 ou 5 ou 10 ; des collections différentes de même quantité ; des variations des positions des objets d'une même collection (invariance/conservation) ; des variations de l'origine et du sens de comptage des objets d'une même collection (indépendance du cardinal) ; des représentations en dizaines et unités.",
+                "Utiliser de manière adéquate les mots « pair » et « impair »."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les chaines numériques.",
+              "attendus": [
+                "Dire les nombres dans l'ordre stable jusqu'à minima 100.",
+                "Compter par 2 jusqu'à 20, par 5 jusqu'à 50 et par 10 jusqu'à 100."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "De la comparaison de collections puis de nombres à la relation d'ordre.",
+              "attendus": [
+                "Utiliser, de manière adéquate, les termes liés à la cardinalité : égal à, le même nombre que, autant que ; moins que, plus petit que, autant en moins que ; plus que, plus grand que, autant en plus que ; vaut le double de, la moitié de…",
+                "Associer les symboles d'ordre (<, >, =) aux expressions « est plus petit que », « est plus grand que », « est égal à ».",
+                "Utiliser, de manière adéquate, les termes liés à l'ordinalité des nombres naturels : avant, après, entre, juste avant, juste après ; premier, deuxième… dernier."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Dire, lire, écrire et représenter les nombres dans la numération décimale.",
+              "attendus": [
+                "Dire, lire des nombres jusqu'à 100 et les écrire en chiffres.",
+                "Expliquer la présence du zéro dans l'écriture des dizaines et de 100.",
+                "Représenter les nombres de 20 à 100 : avec du matériel de comptage ; à l'aide de schèmes ; en dizaines et unités."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Dénombrer des collections à organiser.",
+              "attendus": ["Dénombrer des collections (jusqu'à 100) en comptant par 1, par 2, par 5, par 10, à l'aide de matériel, et cardinaliser la totalité."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Décomposer et recomposer les nombres.",
+              "attendus": [
+                "Décomposer et recomposer des nombres de 1 à 100 en lien avec la numération décimale. Ex. : 76 c'est 7 D et 6 U.",
+                "Décomposer et recomposer des nombres jusqu'à 100 en deux termes, de manière non ordonnée.",
+                "Décomposer et recomposer multiplicativement les nombres : 12, 24, 48 et les lier ; 12, 36, 72 et les lier ; 12, 60 et les lier ; 15, 45 et les lier.",
+                "Décomposer et recomposer le nombre 100 additivement : en deux termes ; en plusieurs termes dont l'addition itérée. Ex. : 100 c'est 80 et 20. 100 c'est 25 et 25 et 25 et 25. Multiplicativement. Ex. : 100 c'est 2 fois 50."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer, ordonner, situer des nombres.",
+              "attendus": [
+                "Utiliser le vocabulaire adéquat et les signes « <, > et = » pour exprimer la comparaison de deux nombres.",
+                "Ordonner des nombres (de 1 à 100) du plus petit au plus grand ou inversement.",
+                "Placer un nombre donné jusqu'à 100 : sur une bande numérique ; dans un tableau.",
+                "Exprimer la position d'un nombre jusqu'à 100 (par encadrement, par approximation selon un degré de précision donné) sur une bande numérique.",
+                "Compléter des portions d'un tableau numérique où sont donnés quelques nombres (jusqu'à 100)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Créer des familles de nombres, relever des régularités.",
+              "attendus": [
+                "Représenter les tables de multiplication par 2, par 5 et par 10 (T2, T5, T10) : à partir de situations ; avec des dessins ; en mots ; en calculs (additions itérées et multiplications).",
+                "Exprimer, de diverses manières, les régularités observées au sein de T2, T5, T10 et les lier."
+              ]
+            }
+          ]
+        },
+        {
+          "code": "3.2",
+          "titre": "Opérer sur des nombres et sur des expressions algébriques",
+          "contexte_annuel": "En 1re année primaire, les élèves construisent le sens des quatre opérations mais c'est au départ de l'addition et de la soustraction que se formalisent les premières opérations.\nEn 2e année primaire, le formalisme des opérations, dont le résultat n'excède pas 100, s'amplifie avec la multiplication. Le sens des opérations au départ de situations concrètes est toujours bien présent. L'apprentissage des premières tables débute. Des techniques opératoires permettant de simplifier certains calculs sont utilisées, ainsi que l'estimation, en vue de vérifier la plausibilité d'un résultat.\nDès la 3e année primaire, les quatre opérations sont formalisées et les premières additions écrites sont abordées. Les élèves poursuivent le travail de construction des tables et ils utilisent des procédures de calculs spécifiques pour trouver un résultat plus facilement.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les opérations et leurs propriétés.",
+              "attendus": [
+                "Associer une opération à son symbole : addition, « + » ; soustraction, « - » ; multiplication, « x ».",
+                "Associer le symbole « = » à l'expression « est égal à » et le symbole « ≠ » à l'expression « n'est pas égal à »."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les automatismes de base en calcul.",
+              "attendus": [
+                "Connaitre de mémoire : les tables d'addition des dix premiers nombres ; les doubles jusqu'à 20 et les moitiés des nombres pairs jusqu'à 20.",
+                "Connaitre de mémoire les tables de multiplication T2, T5 et T10."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire le sens des opérations.",
+              "attendus": [
+                "Utiliser, en situations concrètes, le vocabulaire familier lié aux quatre opérations. Ex. : Ajouter, avancer de, monter de, mettre en plus… ; Regrouper, rassembler, mettre ensemble, mettre avec… ; Reculer, enlever, retirer, cacher, perdre… ; Chercher l'écart entre, la différence… ; Faire des tas, des paquets, des piles de… ; Partager, répartir en… tas, distribuer à…"
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Appréhender et utiliser l'égalité.",
+              "attendus": [
+                "Montrer et verbaliser ce qui est le même ou pas, ce qui est égal ou pas, entre deux collections d'objets ou deux représentations d'objets.",
+                "Utiliser l'égalité en termes de résultat : addition et soustraction jusqu'à 100, multiplication en lien avec les tables et les nombres étudiés.",
+                "Utiliser l'égalité en termes d'équivalence : nombres jusqu'à 20. Ex. : 12 + 7 = 19 ; 19 = 12 + 7 ; 12 + 7 = 20 - 1 ; 15 + 5 = 4 x 5"
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser les propriétés des opérations pour remplacer un calcul par un autre plus simple.",
+              "attendus": [
+                "Utiliser la commutativité de l'addition et de la multiplication.",
+                "Utiliser l'associativité de l'addition et de la multiplication."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser des procédures de calcul mental pour trouver le résultat plus facilement.",
+              "attendus": [
+                "Utiliser la technique de décomposition pour effectuer une addition ou une soustraction.",
+                "Effectuer des multiplications spécifiques par 10 et par 20."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Estimer et vérifier.",
+              "attendus": [
+                "Vérifier la plausibilité d'un résultat.",
+                "Utiliser les opérations réciproques (+, -) pour vérifier le résultat d'une opération."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes en mobilisant des nombres et des opérations.",
+              "attendus": [
+                "Résoudre un problème faisant intervenir des opérations sur les nombres : en traduisant une situation contextualisée par un dessin, une verbalisation puis l'écriture d'une opération mathématique (+, -, x) ; en effectuant les calculs ; en communiquant le résultat avec précision, et verbaliser sa démarche.",
+                "Imaginer une situation en partant de la communication du résultat. Ex. : maman a payé 12 euros."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 4",
+      "titre": "De l'organisation des données à la statistique",
+      "sous_points": [
+        {
+          "code": "4.1",
+          "titre": "Collecter, organiser, représenter et interpréter des données",
+          "contexte_annuel": "En 1re année primaire, les élèves utilisent le tableau à double entrée et les ensembles disjoints pour organiser des objets réels ou représentés.\nEn 2e année primaire, les informations récoltées permettent l'organisation des données par tri ou par classement. Les élèves recourent à de nouveaux supports : l'arbre dichotomique et le diagramme à bandes. Ils prélèvent des informations dans les diverses représentations et résolvent des problèmes de logique déductive.\nEn 3e année primaire, les élèves poursuivent l'organisation d'objets représentés et de données. Ils sont amenés à utiliser deux ensembles incluant une intersection.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'organisation d'objets, de données.",
+              "attendus": [
+                "Utiliser les mots : trier : « a ou n'a pas… » (selon le critère défini) ; Ex. : la couleur. classer (selon des caractéristiques définies au sein d'un critère) ; Ex. : rouge, jaune, bleu…",
+                "Reconnaitre une représentation de données en : tableau ; ensembles ; arbre (dichotomique) ; diagramme à bandes."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Recueillir des informations.",
+              "attendus": ["Collecter des informations à partir d'une question : exigeant une réponse par oui ou par non ; permettant un classement des données récoltées."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Trier, classer des objets ou des données.",
+              "attendus": [
+                "Organiser des objets réels ou représentés : par tri selon un critère déterminé ; par classement selon des caractéristiques déterminées au sein d'un critère.",
+                "Déterminer le critère appliqué dans l'organisation d'objets réels ou représentés.",
+                "Choisir, pour organiser des objets réels ou représentés : un critère à appliquer à un tri ; un critère et au moins deux caractéristiques à appliquer à un classement."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Présenter des données.",
+              "attendus": [
+                "Compléter le support donné en fonction de la situation pour représenter un tri ou un classement : des ensembles disjoints ; un arbre dichotomique (un seul critère) ; un tableau à double entrée ; un diagramme à bandes horizontales ou verticales."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Lire et interpréter des données pour en extraire de l'information.",
+              "attendus": [
+                "Prélever des informations issues d'une représentation : d'ensembles disjoints ; d'un arbre dichotomique (un seul critère) ; d'un tableau à double entrée ; d'un diagramme à bandes horizontales ou verticales."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes en utilisant les données prélevées.",
+              "attendus": ["Résoudre des problèmes de logique déductive, en complétant un tableau à double entrée limité à neuf cases."]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

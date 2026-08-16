@@ -1,0 +1,670 @@
+{
+  "annee": "P5",
+  "matiere": "mathematiques",
+  "source": "Référentiel de Mathématiques - Tronc commun FWB, p.78-92",
+  "champs": [
+    {
+      "champ": "Champ 1",
+      "titre": "Des objets de l'espace à la géométrie",
+      "sous_points": [
+        {
+          "code": "1.1",
+          "titre": "(Se) repérer et communiquer des positionnements ou des déplacements",
+          "contexte_annuel": "En 4e année primaire, les élèves travaillent dans l'espace 3D ou 2D et dans des quadrillages codés. Ils continuent à identifier des points de repère pertinents et se familiarisent avec des plans.\nEn 5e année primaire, tout le vocabulaire lié au repérage, au placement et au déplacement dans l'espace 2D est maitrisé et réinvesti par les élèves. Ils utilisent des représentations de l'espace, sous forme de plans, pour tracer des itinéraires et se déplacer que ce soit selon leur point de vue ou celui d'une autre personne.\nEn 6e année primaire, les élèves maitrisent le vocabulaire spatial et les quadrillages codés. Ils se déplacent dans des espaces connus ou non.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les visions de l'espace.",
+              "attendus": [
+                "Utiliser le vocabulaire exprimant des positions absolues : à côté de, contre, à l'intérieur, à l'extérieur, entre, sous, sur, dans, hors, autour de, face à face, dos à dos.",
+                "Utiliser le vocabulaire exprimant des positions relatives (liées au regard) : devant, derrière, à droite, à gauche, en haut, en bas, au-dessus, en dessous, en face de, de face, de dos, de profil.",
+                "Utiliser le vocabulaire exprimant des positions ordinales : premier, deuxième, troisième… dernier ; au début, à la fin, avant, après."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Situer, placer un objet ou soi-même.",
+              "attendus": [
+                "Situer (exprimer la position absolue, relative ou ordinale) un objet ou soi-même avec le vocabulaire adéquat : dans l'espace 2D (photo, plan) ; selon le point de vue de l'élève ou d'un(e) autre personnage/personne.",
+                "Placer un ensemble d'objets/soi-même selon des consignes données ou un modèle observé dans l'espace 2D (photo, plan)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Déplacer un objet ou soi-même.",
+              "attendus": [
+                "Expliquer, oralement ou par écrit, un déplacement à l'aide du vocabulaire adéquat, en identifiant des points de repère.",
+                "Tracer un déplacement sur un plan en suivant un enchainement de consignes orales ou écrites."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Situer, placer un objet dans un quadrillage.",
+              "attendus": [
+                "Situer (exprimer la position) un objet dans un quadrillage codé.",
+                "Placer des objets dans un quadrillage en utilisant le codage."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Lire, interpréter des représentations de l'espace et les confronter au réel.",
+              "attendus": [
+                "Tracer, sur un plan élaboré selon un quadrillage codé, un itinéraire à partir des points de départ et d'arrivée définis, en respectant au moins quatre points de repère pertinents identifiés.",
+                "Se déplacer dans l'espace 3D en suivant un trajet donné sur un plan."
+              ]
+            }
+          ]
+        },
+        {
+          "code": "1.2",
+          "titre": "Appréhender et représenter des objets de l'espace",
+          "contexte_annuel": "En 4e année primaire, les élèves amplifient leurs connaissances des quadrilatères. Les notions de parallèle, de perpendiculaire et de hauteur apparaissent. Ils sont de plus en plus précis dans leurs tracés. Ils comparent et établissent des liens entre certaines figures. Ils travaillent sur les développements du parallélépipède rectangle.\nEn 5e année primaire, la famille des quadrilatères et celle des solides se complètent. Le compas s'ajoute à la latte et à l'équerre pour tracer des figures. Les élèves établissent de plus en plus de liens entre les différentes figures, leurs caractéristiques et leurs composantes. Les propriétés des diagonales et des médianes sont établies. Le travail sur les développements des solides se termine.\nEn 6e année primaire, les élèves stabilisent toutes les notions étudiées. Ils tracent les polygones réguliers.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les figures, leurs composantes, leurs caractéristiques et leurs propriétés.",
+              "attendus": [
+                "Identifier : des quadrilatères : carré, rectangle, losange, parallélogramme, trapèze, trapèze isocèle, trapèze rectangle ; des triangles : acutangles, rectangles, obtusangles, scalènes, isocèles, équilatéraux ; un cercle.",
+                "Identifier les éléments du plan : droite, segment de droite.",
+                "Identifier un angle aigu et un angle obtus par comparaison à l'angle droit.",
+                "Identifier les composantes des figures travaillées : côtés (longueur, largeur, base), sommets, angles (aigus, droits et obtus), centre, rayon, diamètre.",
+                "Énoncer des caractéristiques des figures travaillées : le nombre de côtés, les côtés isométriques, les côtés parallèles ou perpendiculaires, le nombre d'angles (aigus, droits, obtus), les angles isométriques.",
+                "Identifier hauteur, diagonale, médiane, axe de symétrie.",
+                "Énoncer les propriétés des diagonales et des médianes d'un carré, d'un rectangle, d'un parallélogramme et d'un losange."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les solides, leurs composantes, leurs caractéristiques et leurs représentations planes.",
+              "attendus": [
+                "Identifier polyèdre et non-polyèdre, cube, parallélépipède rectangle, cylindre, sphère, cône, pyramide, prisme.",
+                "Identifier les composantes des solides travaillés : faces, arêtes, sommets.",
+                "Énoncer des caractéristiques des solides travaillés : nombre de faces, forme des faces, des faces isométriques, faces parallèles, faces perpendiculaires."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Le symbolisme spécifique aux objets et relations géométriques.",
+              "attendus": ["Associer le symbole à sa signification : A désigne le point A ; a désigne la droite a ; [AB] désigne le segment dont les extrémités sont les points A et B ; // signifie parallèles ; ⊥ signifie perpendiculaires."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Interpréter et utiliser les symboles géométriques.",
+              "attendus": ["Utiliser les symboles spécifiques : A, a, [AB], // et ⊥."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire des solides et des figures avec du matériel varié.",
+              "attendus": [
+                "Construire des prismes droits et des pyramides avec du matériel géométrique varié (faces à attacher, tiges et boules à assembler…).",
+                "Construire un cube ou un parallélépipède rectangle à partir d'un développement tracé.",
+                "Construire les polygones travaillés par découpage, par pliage et avec du matériel varié."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Tracer des figures.",
+              "attendus": [
+                "Utiliser l'équerre et la latte pour tracer des droites perpendiculaires et parallèles sur papier vierge, avec et sans contraintes.",
+                "Tracer un triangle, un quadrilatère, à la latte et à l'équerre, avec et sans contraintes, sur papier tramé et sur papier vierge.",
+                "Tracer au compas un cercle, un triangle isocèle et un triangle équilatéral sur papier, avec et sans contraintes.",
+                "Tracer un losange inscrit dans un rectangle.",
+                "Tracer un rectangle à partir d'un losange."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Tracer des axes de symétrie, des diagonales, des médianes et des hauteurs.",
+              "attendus": [
+                "Tracer une hauteur d'un triangle, d'un parallélogramme, d'un trapèze.",
+                "Tracer dans un quadrilatère : les axes de symétrie ; les médianes et diagonales.",
+                "Reconnaitre les quadrilatères pour lesquels les diagonales et/ou les médianes sont des axes de symétrie."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer des figures.",
+              "attendus": ["Comparer les caractéristiques (selon les côtés et les angles) : de deux quadrilatères ; de deux triangles."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Établir des relations entre des objets en 3D et leurs représentations en 2D.",
+              "attendus": [
+                "Reconnaitre les figures possibles correspondant aux faces d'un assemblage de maximum trois cubes.",
+                "Tracer, à la latte, un développement d'un cube ou d'un parallélépipède rectangle sur papier tramé.",
+                "Associer à un prisme droit, un développement correct parmi des développements donnés."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Articuler, en contexte, les caractéristiques puis les propriétés des solides et des figures, les procédés de construction et de traçage.",
+              "attendus": ["Tracer une figure composée de figures travaillées suivant des consignes de construction."]
+            }
+          ]
+        },
+        {
+          "code": "1.3",
+          "titre": "Dégager des régularités et des propriétés géométriques pour construire, calculer et justifier",
+          "contexte_annuel": "En 4e année primaire, les mouvements se complètent et les premiers agrandissements et les premières réductions apparaissent.\nEn 5e année primaire, les élèves exécutent des mouvements pour obtenir des images de figures. Les élèves jonglent toujours avec les agrandissements et les réductions.\nEn 6e année primaire, ils poursuivent ces mêmes objectifs.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Des mouvements et leurs caractéristiques vers les isométries.",
+              "attendus": ["Identifier les mouvements appliqués à une figure (glisser, pivoter, retourner)."]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Des agrandissements (réductions) et de leurs caractéristiques vers les figures semblables.",
+              "attendus": ["Utiliser les termes « agrandir », « réduire » pour décrire un mouvement appliqué à une figure."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Réaliser des mouvements sur des figures.",
+              "attendus": [
+                "Exécuter un mouvement précis donné d'un motif figuratif, avec un support (un gabarit, du papier calque…) pour obtenir son image. Ex. : le glissement sur une droite donnée ou le pivotement d'un demi-tour autour d'un point donné, ou le retournement autour d'un axe donné.",
+                "Désigner parmi des images d'un motif figuratif donné celle qui résulte d'un mouvement donné.",
+                "Tracer dans un quadrillage, selon l'axe de symétrie donné, l'image d'un assemblage de figures."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Réaliser des agrandissements (des réductions) de figures.",
+              "attendus": [
+                "Tracer dans un quadrillage agrandi ou réduit, l'image d'une figure donnée.",
+                "Tracer l'agrandissement (double) ou la réduction (moitié) d'une figure simple dans un même quadrillage."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Dégager et respecter des régularités liées aux mouvements.",
+              "attendus": ["Réaliser, dans un quadrillage, une production artistique par la répétition d'un motif figuratif ou d'une figure travaillée en appliquant des glissements, des retournements et des pivotements. Ex. : frises, pavages, rosaces."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 2",
+      "titre": "Des grandeurs à la relation entre variables",
+      "sous_points": [
+        {
+          "code": "2.1",
+          "titre": "Concevoir des grandeurs",
+          "contexte_annuel": "En 4e année primaire, les élèves explorent les aires et exploitent des énoncés sur des durées et des temps instantanés.\nEn 5e année primaire, les élèves comparent essentiellement des volumes.\nEn 6e année primaire, les élèves utilisent l'ensemble des grandeurs travaillées précédemment.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'identification et la comparaison de grandeurs d'objets.",
+              "attendus": [
+                "Utiliser de manière adéquate les termes relatifs aux grandeurs : la longueur, la masse, la capacité, le cout, l'aire, le volume.",
+                "Énoncer la comparaison de deux objets selon une de leurs grandeurs, dont le volume : plus, moins, aussi volumineux ; plus ou moins de place dans l'espace.",
+                "Utiliser de manière adéquate les termes : longueur, largeur, épaisseur, profondeur, hauteur, périmètre, aire et volume."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "La notion de durée et la comparaison de durées.",
+              "attendus": [
+                "Reconnaitre la grandeur « durée » dans des expressions courantes. Ex. : garantie, délai de livraison, période de soldes, date de péremption…",
+                "Énoncer la comparaison de la durée de deux actions en lien avec la vitesse : rapide, lent."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer des objets selon une de leurs grandeurs.",
+              "attendus": ["Classer des solides donnés selon leur volume."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer les durées d'évènements, d'actions.",
+              "attendus": ["Trier des énoncés donnés désignant le temps instantané (ordinal) ou des durées (cardinal)."]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Choisir, en situations significatives, des démarches pertinentes de comparaisons de grandeurs d'objets.",
+              "attendus": ["Choisir une action concrète pertinente pour comparer des volumes (regarder, juxtaposer, transvaser, emboiter…), verbaliser son action et expliquer son choix."]
+            }
+          ]
+        },
+        {
+          "code": "2.2",
+          "titre": "Agir sur des grandeurs",
+          "contexte_annuel": "En 4e année primaire, la découverte du centimètre carré et du mètre carré permet de mesurer l'aire d'un rectangle ou d'un carré. Les nombres décimaux prennent leur sens grâce aux grandeurs prélevées dans le quotidien.\nEn 5e année primaire, les élèves poursuivent l'étude des unités de mesure et approfondissent leurs aptitudes à les symboliser, à utiliser les instruments de mesure, à estimer, à manipuler le système métrique, à convertir des grandeurs usuelles et à quantifier des durées. Le travail sur les unités de volume s'amorce par le biais d'activités de mesurage. Les problèmes d'achats se complexifient.\nEn 6e année primaire, les élèves poursuivent le travail sur les unités de volume et brassent l'ensemble des autres unités.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'usage des unités conventionnelles.",
+              "attendus": [
+                "Utiliser et symboliser : les unités de longueur ; les unités de capacité ; les unités de masse ; les unités d'aire : le mètre carré (m²), le décimètre carré (dm²), le centimètre carré (cm²), le millimètre carré (mm²) ; une unité de volume : le centimètre cube (cm³).",
+                "Distinguer dans l'expression d'une grandeur mesurée : la grandeur, la mesure et l'unité de mesure."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Le mesurage de durées.",
+              "attendus": [
+                "Utiliser de manière adéquate les termes : seconde, minute, heure, année, décennie, siècle, millénaire.",
+                "Énoncer les relations entre certaines unités conventionnelles de durées dont : 1 seconde = 10 dixièmes de seconde = 100 centièmes de seconde."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Mesurer des grandeurs.",
+              "attendus": [
+                "Effectuer le mesurage d'un volume à l'aide d'un étalon non conventionnel choisi (familier et commun à la classe) et en exprimer le résultat approximatif.",
+                "Effectuer le mesurage du volume de boites en centimètres cubes, par remplissage et comptage, et en exprimer le résultat approximatif.",
+                "Effectuer le mesurage d'une grandeur d'un objet de l'environnement et en exprimer le résultat, en utilisant une unité conventionnelle : de longueur ; de capacité ; de masse ; d'aire : m², dm², cm², mm² ; de volume : cm³.",
+                "Utiliser l'instrument de mesure adéquat en fonction de la situation."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser des instruments, des supports pour exprimer un instant dans le temps et mesurer des durées.",
+              "attendus": ["Utiliser un chronomètre, un minuteur, une horloge pour déterminer la durée d'une action."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Choisir une grandeur et justifier son choix.",
+              "attendus": [
+                "Choisir, parmi plusieurs estimations d'aire d'une surface (en m², en cm²), celle qui est la plus plausible et justifier son choix.",
+                "Choisir, parmi plusieurs estimations de durées d'évènements données en jours et en fractions de jour, celle qui est la plus plausible et justifier son choix."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire le système des unités conventionnelles.",
+              "attendus": [
+                "Donner du sens aux unités conventionnelles travaillées en les associant à des objets de l'environnement (un m² c'est l'aire de…).",
+                "Lister des objets de la vie courante dont une grandeur se mesure avec l'unité travaillée.",
+                "Donner du sens aux préfixes : déci, centi, milli, kilo, hecto, déca dans les unités conventionnelles travaillées.",
+                "Réaliser des conversions significatives (longueur, masse, capacité, aire) en lien avec les unités conventionnelles travaillées, avec ou sans abaques (construits préalablement).",
+                "Associer, pour l'eau, des unités conventionnelles de volumes, de capacités et de masses, dans des situations significatives, en lien avec des représentations de ces unités et des expériences de comparaison (le dm³, le l, le kg).",
+                "Associer à l'écriture d'une grandeur prélevée dans le quotidien (longueur, capacité, masse, aire), d'autres écritures donnant du sens aux nombres décimaux. Ex. : 10 gouttes de colorant alimentaire pour 1kg, c'est 1 goutte pour 0,1 kg ou 100 g."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Donner du sens à des unités usuelles de durées.",
+              "attendus": ["Associer un nombre d'années à la durée de situations variées."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Opérer sur des durées en référence à des représentations visuelles.",
+              "attendus": [
+                "Déterminer et représenter (horloge, chronomètre, ligne du temps…) une durée ne dépassant pas une heure.",
+                "Déterminer un instant d'arrivée ou de départ, à partir d'une durée donnée ne dépassant pas une heure."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Articuler, en situations significatives, l'estimation d'une grandeur, son mesurage (avec les références et les outils adéquats) et l'appréciation du résultat.",
+              "attendus": [
+                "Rassembler les instruments de mesure nécessaires et organiser judicieusement les prélèvements de mesures pour comparer des résultats.",
+                "Estimer une surface à recouvrir et confronter cette estimation avec les grandeurs mesurées de la surface choisie, en vue de réaliser un achat raisonné.",
+                "Estimer le volume d'une boite, d'un objet en référence à une unité conventionnelle choisie (le cm³) avant d'effectuer le mesurage."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Recourir à divers outils et stratégies pour anticiper, représenter, planifier, gérer le temps en fonction de divers buts.",
+              "attendus": [
+                "Estimer, en jours et en fractions de jour, la durée d'un projet à vivre.",
+                "Quantifier la durée nécessaire à la réalisation d'une activité inédite, inconnue pour en vérifier la faisabilité dans le laps de temps défini ou imparti."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes dans des situations contextualisées.",
+              "attendus": [
+                "Résoudre des problèmes d'achats mobilisant : des prix exprimés en € et centimes ; les expressions comme « 1 + 1 gratuit », « le deuxième à moitié prix », « prix à partir de… » ou « jusqu'à 70 % de remise » ; la notion de bénéfice et de perte.",
+                "Résoudre des problèmes dans lesquels deux grandeurs sont en relation de proportionnalité directe. Ex. : la distance et la durée."
+              ]
+            }
+          ]
+        },
+        {
+          "code": "2.3",
+          "titre": "Opérer sur des grandeurs – périmètres, aires et volumes",
+          "contexte_annuel": "En 4e année primaire, les élèves déterminent le volume d'une boite à l'aide d'unités non conventionnelles. Le calcul du périmètre et de l'aire interviennent pour résoudre des problèmes, en situations contextualisées ou non.\nEn 5e année primaire, les élèves calculent des aires et des volumes. Les concepts de périmètre et d'aire sont réinvestis dans des situations contextualisées.\nEn 6e année primaire, l'étude des formules d'aire s'étend aux losanges, aux trapèzes et aux triangles. Les élèves calculent le volume du cube et du parallélépipède rectangle, ils en établissent les formules. Celles-ci sont ensuite utilisées, en situations contextualisées.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les périmètres et les aires de figures, les volumes de solides.",
+              "attendus": [
+                "Utiliser le calcul du périmètre d'un polygone.",
+                "Énoncer la formule du calcul de l'aire du rectangle, du carré et du parallélogramme.",
+                "Énoncer que le volume d'un solide est la place occupée par ce solide.",
+                "Énoncer la formule du calcul du volume du parallélépipède rectangle et du cube."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire et utiliser des démarches pour calculer des périmètres, des aires de figures et des volumes de solides.",
+              "attendus": [
+                "Calculer le périmètre de polygones donnés à partir des longueurs de côtés données ou mesurées.",
+                "Associer une expression du calcul d'un périmètre à un polygone donné.",
+                "Déterminer l'aire d'un parallélogramme en lien avec l'aire d'un rectangle.",
+                "Calculer l'aire d'un polygone donné (rectangle, carré, parallélogramme) à partir de dimensions données ou mesurées, en appliquant la formule.",
+                "Déterminer le volume d'une boite parallélépipédique ou cubique donnée en : nombre d'étalons non conventionnels ; nombre d'unités conventionnelles (cm³).",
+                "Choisir les unités de mesure de périmètre, d'aire et de volume adaptées à la situation."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Construire des démarches pour déterminer des périmètres, des aires et des volumes, en situations significatives.",
+              "attendus": ["Résoudre des problèmes faisant intervenir des calculs de périmètre et d'aire de figures simples, en situations contextualisées, et expliquer sa démarche."]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Construire des démarches pour déterminer des variations en lien avec des calculs de périmètres, d'aires et de volumes.",
+              "attendus": ["Résoudre des problèmes faisant intervenir des variations de dimensions d'un rectangle, en respectant la même aire et comparer leur périmètre."]
+            }
+          ]
+        },
+        {
+          "code": "2.4",
+          "titre": "Agir puis opérer sur des grandeurs – fractions",
+          "contexte_annuel": "En 4e année primaire, le panel des fractions abordées s'élargit à nouveau (dixième, vingtième, centième…). C'est aussi l'année de l'apprentissage des pourcentages et des nombres décimaux.\nEn 5e année primaire, il s'agit d'ouvrir l'étude des fractions à celles qui sont supérieures à l'unité. Les élèves apprennent également à calculer des pourcentages. Ils sont amenés à résoudre des problèmes dans des situations contextualisées.\nEn 6e année primaire, les élèves transforment une grandeur fractionnée en une autre équivalente. Ils sont progressivement amenés à justifier l'ordre entre grandeurs fractionnées de même numérateur par le rôle des dénominateurs.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "La notion de fraction partage en lien avec des grandeurs d'objets (réels, représentés).",
+              "attendus": [
+                "Utiliser de manière adéquate des expressions de grandeurs fractionnées. Ex. : 3/8 de tarte…",
+                "Énoncer les rôles du numérateur et du dénominateur d'une fraction au départ de l'unité.",
+                "Énoncer qu'une fraction de dénominateur 100 exprime un pourcentage et inversement.",
+                "Écrire la mesure d'une grandeur fractionnée sous forme d'un pourcentage et d'un nombre décimal."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Exploiter des fractions partages et des pourcentages.",
+              "attendus": [
+                "Reconnaitre, parmi plusieurs représentations données de fractions inférieures, égales ou supérieures à l'unité, celle qui est nommée.",
+                "Additionner des grandeurs fractionnées et simplifier le résultat obtenu.",
+                "Multiplier une grandeur fractionnée par un nombre entier et simplifier le résultat obtenu.",
+                "Associer un fractionnement du carré de 100 au pourcentage correspondant, parmi plusieurs donnés et inversement.",
+                "Calculer 10 %, 20 %, 25 % et 50 % d'une quantité."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer des grandeurs fractionnées pour établir des équivalences, pour établir un ordre.",
+              "attendus": [
+                "Établir l'équivalence de fractionnements de mesures de grandeurs et la traduire par une égalité.",
+                "Établir l'ordre entre grandeurs fractionnées de même dénominateur ou de même numérateur."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes comportant des grandeurs fractionnées ou des pourcentages.",
+              "attendus": ["Résoudre des problèmes faisant intervenir des représentations de grandeurs fractionnées ou des pourcentages dans des situations contextualisées."]
+            }
+          ]
+        },
+        {
+          "code": "2.5",
+          "titre": "Mettre en relation des grandeurs",
+          "contexte_annuel": "En 4e année primaire, les élèves identifient le lien entre deux grandeurs proportionnelles, afin de compléter un tableau de proportionnalité.\nEn 5e année primaire, les élèves expriment un rapport à l'aide d'une fraction. Ils distinguent les situations proportionnelles directes de celles qui ne le sont pas. Ils appréhendent la notion d'échelle au travers de situations variées.\nEn 6e année primaire, le travail amorcé en 5e s'affine et l'étude de l'échelle s'amplifie par le calcul des dimensions à l'échelle de grandeurs réelles, en utilisant des plans et des cartes.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "La relation de la proportionnalité directe.",
+              "attendus": [
+                "Énoncer les rôles du numérateur et du dénominateur d'une fraction rapport.",
+                "Reconnaitre des grandeurs directement proportionnelles parmi un ensemble : de représentations en graphe fléché ; de tableaux de nombres.",
+                "Énoncer un lien entre deux grandeurs proportionnelles."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser la proportionnalité directe pour exploiter la notion d'échelle.",
+              "attendus": [
+                "Associer une représentation en 2D à un objet réel selon une échelle donnée (1/100, 1/50, 1/20, 1/1).",
+                "Calculer une distance réelle sur base d'une carte et son échelle linéaire (la distance sur la carte et l'échelle linéaire étant données)."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Exploiter des situations de proportionnalité directe entre grandeurs.",
+              "attendus": [
+                "Déterminer une quantité dans une situation contextualisée de proportionnalité directe (nombre de… pour…).",
+                "Représenter une situation contextualisée de proportionnalité directe par un graphe fléché ou un tableau de proportionnalité.",
+                "Identifier un lien (multiplicatif ou additif) entre deux grandeurs dans un tableau de proportionnalité.",
+                "Compléter un graphe fléché ou un tableau de proportionnalité en lien avec une situation de proportionnalité directe."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des situations de proportionnalité directe.",
+              "attendus": ["Écrire le résultat et sa démarche de résolution d'une situation de proportionnalité directe."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 3",
+      "titre": "De l'arithmétique à l'algèbre",
+      "sous_points": [
+        {
+          "code": "3.1",
+          "titre": "Appréhender le nombre puis la lettre dans tous leurs aspects",
+          "contexte_annuel": "En 4e année primaire, les élèves abordent les nombres jusqu'à 100 000, dont les nombres comprenant une partie non entière jusqu'au millième.\nEn 5e année primaire, l'apprentissage des nombres s'intensifie. Le million est abordé ainsi que les comptages par nombres décimaux. Les élèves complètent des suites de nombres.\nEn 6e année primaire, les élèves appréhendent les nombres jusqu'aux milliards et exercent l'ensemble des savoirs et des savoir-faire rencontrés.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Des nombres naturels aux nombres réels.",
+              "attendus": [
+                "Utiliser des nombres pour communiquer : une quantité ; une position ; un numéro ; …",
+                "Utiliser de manière adéquate les noms des rangs (unité, dizaine, centaine) et les noms des classes (des millions, des mille, des unités simples, des millièmes).",
+                "Associer le nom d'un nombre naturel jusqu'aux millions.",
+                "Associer le nom d'un nombre composé d'une partie entière limitée aux unités de mille et d'une partie non entière limitée aux millièmes, à son écriture en chiffres."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les chaines numériques.",
+              "attendus": ["Compter par 0,1 ; 0,2 ; 0,5 ; 0,25 ; 0,125 jusqu'à 2."]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "De la comparaison de collections puis de nombres à la relation d'ordre.",
+              "attendus": [
+                "Utiliser de manière adéquate les termes liés à la cardinalité : égal, le même nombre que, autant que ; moins que, plus petit que, autant en moins que ; plus que, plus grand que, autant en plus que ; vaut autant de fois ; vaut le dixième, centième, millième de…",
+                "Associer les symboles d'ordre (<, >, =) aux expressions « est plus petit que », « est plus grand que », « est égal à ».",
+                "Utiliser de manière adéquate les termes liés à l'ordinalité des nombres naturels : avant, après, entre, juste avant, juste après ; premier, deuxième… dernier."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Dire, lire, écrire et représenter les nombres dans la numération décimale.",
+              "attendus": [
+                "Dire, lire des nombres jusqu'au million et les écrire en chiffres.",
+                "Dire, lire des nombres composés d'une partie entière limitée aux unités de mille et d'une partie non entière limitée aux millièmes, et les écrire en chiffres.",
+                "Expliquer la présence du zéro dans l'écriture des nombres jusqu'au million et dans un nombre décimal.",
+                "Écrire des nombres comprenant une partie entière jusqu'à quatre chiffres et une partie non entière jusqu'aux millièmes dans l'abaque."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Décomposer et recomposer les nombres.",
+              "attendus": [
+                "Décomposer et recomposer des nombres de trois à six chiffres en lien avec la numération décimale.",
+                "Décomposer et recomposer le nombre 1 : additivement ; multiplicativement.",
+                "Décomposer un nombre en sa partie entière et sa partie non entière."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Comparer, ordonner, situer des nombres.",
+              "attendus": [
+                "Utiliser le vocabulaire adéquat et les signes « <, > et = » pour exprimer la comparaison de deux nombres. Ex. : 12,6 = 12,600 ; 12,006 < 12,6",
+                "Encadrer un nombre écrit sous forme décimale au dixième près.",
+                "Ordonner des nombres de trois à six chiffres, avec ou sans virgule, de façon croissante ou décroissante.",
+                "Placer un nombre, avec ou sans virgule, limité au millième : sur une portion de droite numérique graduée et sous graduée ; dans des portions de tableaux numériques.",
+                "Exprimer la position d'un nombre, avec ou sans virgule, limité au millième (par encadrement, par approximation selon un degré de précision donné) sur une portion de droite numérique.",
+                "Compléter des portions d'un tableau numérique où sont donnés quelques nombres écrits sous leur forme décimale limitée au millième."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Créer des familles de nombres, relever des régularités.",
+              "attendus": [
+                "Exprimer les régularités observées dans les tables de multiplications pour les nombres jusqu'à 100.",
+                "Déterminer la régularité présente dans une suite de nombres donnée.",
+                "Compléter une suite de nombres donnée par des éléments qui en ont été extraits."
+              ]
+            }
+          ]
+        },
+        {
+          "code": "3.2",
+          "titre": "Opérer sur des nombres et sur des expressions algébriques",
+          "contexte_annuel": "En 4e année primaire, les élèves terminent l'appropriation des tables de multiplication. Ils opèrent avec des nombres décimaux limités au dixième. Les propriétés des opérations et des procédures de calcul mental se travaillent, la multiplication écrite se construit.\nEn 5e année primaire, la connaissance des tables de multiplication est indispensable ainsi que la décomposition du nombre 100 en deux termes ou deux facteurs. Les élèves apprennent alors à décomposer le nombre 1 en parallèle du nombre 100. Ils accentuent la compréhension de l'égalité dans les enchainements opératoires et ils ajustent les fausses égalités. Les élèves poursuivent l'apprentissage et la maitrise des algorithmes de calcul écrit sur les quatre opérations. L'estimation, la vérification des résultats et l'utilisation de la calculatrice se poursuivent en fonction des situations rencontrées.\nEn 6e année primaire, les élèves affinent leur compréhension des opérations. Ils maitrisent l'égalité. Ils connaissent les propriétés des opérations et ils utilisent les procédures de calcul mental. Les nombres décimaux sont maitrisés. Ils construisent la division écrite et résolvent des problèmes plus complexes.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "Les opérations et leurs propriétés.",
+              "attendus": [
+                "Associer une opération à ses composantes et son résultat : addition, termes, somme ; soustraction, premier terme, deuxième terme, différence ; multiplication, facteurs, produit ; division, dividende, diviseur, quotient, reste.",
+                "Associer le symbole « = » à l'expression « est égal à » et le symbole « ≠ » à l'expression « n'est pas égal à » ou « est différent de ».",
+                "Reconnaitre les parenthèses comme symbole intervenant dans les procédures de calcul."
+              ]
+            },
+            {
+              "type": "Savoir",
+              "contenu": "Les automatismes de base en calcul.",
+              "attendus": [
+                "Connaitre de mémoire les décompositions : de 100 en deux termes ou en deux facteurs ; de 1, en dixièmes, en deux termes ou en deux facteurs.",
+                "Connaitre de mémoire les tables de multiplication jusqu'à T10."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Construire le sens des opérations.",
+              "attendus": ["Identifier une opération ou une suite d'opérations à partir d'une situation."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Appréhender et utiliser l'égalité.",
+              "attendus": [
+                "Utiliser l'égalité en termes de résultat : addition, soustraction, multiplication et division.",
+                "Utiliser l'égalité en termes d'équivalence. Ex. : 190 = 62 + 128 ; 152 + 17 = 190 - 21 ; 12 x 3 = 72 : 2",
+                "Utiliser l'égalité adéquatement dans les enchainements opératoires. Ex. : (12 + 4) - (3 + 2) + 2 = 16 - 5 + 2 = (16 - 5) + 2 = 11 + 2 = 13",
+                "Ajuster les fausses égalités pour qu'elles deviennent vraies. Ex. : 64 + 56 = 120 x 3 = 360 devient 64 + 56 = 120 ; 120 x 3 = 360 ou (64 + 56) x 3 = 360"
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser les propriétés des opérations pour remplacer un calcul par un autre plus simple.",
+              "attendus": [
+                "Utiliser la commutativité de l'addition et de la multiplication.",
+                "Utiliser l'associativité de l'addition et de la multiplication."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser des procédures de calcul mental pour trouver le résultat plus facilement.",
+              "attendus": [
+                "Utiliser, pour effectuer une opération, une technique parmi : la décomposition ; la distributivité ; la compensation.",
+                "Utiliser la comparaison des nombres pour effectuer une opération. Ex. : Si 5 x 12 = 60 alors 0,5 x 12 = … et 5 x 1,2 = …",
+                "Effectuer des multiplications spécifiques par 0,1 ; par 0,5 ; par 0,25 ; par 9 ; par 99 ; par 11 ; par 101 ; par 110 ; par 25.",
+                "Effectuer des divisions spécifiques par 50 et par 25."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Appliquer un algorithme de calcul écrit pour en comprendre le mécanisme.",
+              "attendus": [
+                "Effectuer des additions de maximum trois termes (limités au millième).",
+                "Effectuer des soustractions limitées au millième (technique de compensation et/ou emprunt).",
+                "Effectuer des multiplications de nombres naturels dont le multiplicateur est limité à deux chiffres.",
+                "Effectuer des divisions de nombres naturels dont le diviseur est limité à un chiffre."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Utiliser une calculatrice.",
+              "attendus": ["Utiliser, en fonction de l'opération et des nombres, la calculatrice pour effectuer des opérations."]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Estimer et vérifier.",
+              "attendus": [
+                "Estimer l'ordre de grandeur du résultat d'une opération (addition, soustraction, multiplication et division), avant de calculer précisément.",
+                "Vérifier la plausibilité d'un résultat.",
+                "Utiliser la calculatrice pour vérifier le résultat d'une opération.",
+                "Utiliser les opérations réciproques (+, -) et (x, :) pour vérifier le résultat d'une opération."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes en mobilisant des nombres et des opérations.",
+              "attendus": [
+                "Résoudre un problème faisant intervenir des opérations sur les nombres : en traduisant une situation contextualisée par un dessin, une verbalisation puis l'écriture d'opérations mathématiques (+, -, x, :) ; en estimant le résultat ; en effectuant les calculs ; en communiquant le résultat avec précision ; en vérifiant la plausibilité de la réponse, et verbaliser sa démarche.",
+                "Rédiger un énoncé en partant : de la communication du résultat ; Ex. : mon école compte 124 élèves. de maximum deux calculs consécutifs et des résultats ; Ex. : 6 x 1,5 l = 9 l ; 9 x 2 € = 18 €"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "champ": "Champ 4",
+      "titre": "De l'organisation des données à la statistique",
+      "sous_points": [
+        {
+          "code": "4.1",
+          "titre": "Collecter, organiser, représenter et interpréter des données",
+          "contexte_annuel": "En 4e année primaire, les élèves utilisent divers supports pour organiser et présenter les données. Ils apprennent à analyser une situation en formulant une question avec un choix limité de réponses.\nEn 5e année primaire, les élèves présentent des données via un support connu (ensembles, arbre, tableau, diagramme) et choisi en fonction de la situation. Ils prélèvent des informations dans les divers supports, dont le diagramme circulaire. Ils résolvent toujours des problèmes de logique déductive.\nEn 6e année primaire, les élèves mobilisent tous les savoirs et les savoir-faire rencontrés lors des années d'études précédentes.",
+          "items": [
+            {
+              "type": "Savoir",
+              "contenu": "L'organisation d'objets, de données.",
+              "attendus": [
+                "Utiliser les mots : trier : « a ou n'a pas… » (selon le critère défini) ; Ex. : la couleur. classer (selon des caractéristiques définies au sein d'un critère) ; Ex. : rouge, jaune, bleu…",
+                "Reconnaitre une représentation de données en : tableau ; ensembles ; arbre (dichotomique) ; diagramme à bandes."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Recueillir des informations.",
+              "attendus": [
+                "Formuler une question : exigeant une réponse par oui ou par non ; permettant un classement des données récoltées."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Trier, classer des objets ou des données.",
+              "attendus": [
+                "Organiser des données : par tri selon des critères considérés successivement ; par classement selon des caractéristiques déterminées au sein d'un critère.",
+                "Déterminer les critères appliqués dans l'organisation de données.",
+                "Choisir, pour organiser des données, un critère et ses caractéristiques."
+              ]
+            },
+            {
+              "type": "Savoir-faire",
+              "contenu": "Présenter des données.",
+              "attendus": [
+                "Représenter à l'aide du support déterminé, en fonction de la situation, un tri ou un classement par : trois ensembles incluant une intersection ; un arbre dichotomique ; un tableau à double entrée ; un diagramme à bandes horizontales ou verticales."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Lire et interpréter des données pour en extraire de l'information.",
+              "attendus": [
+                "Prélever des informations issues d'une représentation : d'ensembles incluant des intersections ; d'un arbre ; d'un tableau ; d'un diagramme (à bandes, en bâtonnets et circulaire)."
+              ]
+            },
+            {
+              "type": "Compétence",
+              "contenu": "Résoudre des problèmes en utilisant les données prélevées.",
+              "attendus": ["Résoudre des problèmes de logique déductive en complétant un tableau à double entrée limité à vingt-cinq cases."]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
