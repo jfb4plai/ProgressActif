@@ -3,3 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Impression / export PDF — ProgressActif : n'imprime que la zone de résultat */
+@media print {
+  .no-print { display: none !important; }
+  .impression-titre { display: block !important; font-weight: bold; font-size: 16px; margin-bottom: 1rem; }
+  #zone-resultat { margin-top: 0 !important; }
+  #zone-resultat > div[style*="grid"] { display: block !important; }
+  .plai-card { break-inside: avoid; margin-bottom: 1rem; border: 1px solid #ccc; }
+  textarea.plai-input { border: none; resize: none; padding: 0; }
+}

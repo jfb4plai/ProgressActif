@@ -3,7 +3,7 @@ import Adapter from './pages/Adapter'
 export default function App() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
-      <nav className="plai-nav">
+      <nav className="plai-nav no-print">
         <a href="/" className="plai-nav-logo">
           <img src="/plai-logo.jpg" alt="PLAI" style={{ height: 32, width: 'auto' }} />
           ProgressActif
@@ -13,12 +13,12 @@ export default function App() {
         </div>
       </nav>
 
-      <div className="plai-banner" style={{ position: 'sticky', top: 52, zIndex: 99 }}>
+      <div className="plai-banner no-print" style={{ position: 'sticky', top: 52, zIndex: 99 }}>
         Feuille papier, pas de version numérique ? Passez d'abord par{' '}
         <a href="https://diffactif.vercel.app" target="_blank" rel="noreferrer">DiffActif</a> : le scan devient une version en Aménagements Universels, qui sert de base ici. Ensuite, ces 3 niveaux visent le même attendu — un élève DYS a besoin d'une adaptation de forme, pas seulement de difficulté. DiffActif l'ajuste par profil réel (dyslexie, TDAH, dyspraxie…), jamais un aménagement générique unique.
       </div>
 
-      <div className="plai-container plai-section" style={{ borderTop: 'none' }}>
+      <div className="plai-container plai-section no-print" style={{ borderTop: 'none' }}>
         <h2>Un exercice, trois niveaux, un seul attendu</h2>
         <p style={{ color: 'var(--text2)', marginBottom: '1.5rem' }}>
           Collez un exercice de votre farde et l'année visée. ProgressActif identifie l'attendu du tronc
@@ -56,7 +56,7 @@ export default function App() {
 
       <Adapter />
 
-      <footer className="plai-footer">
+      <footer className="plai-footer no-print">
         <p>ProgressActif — outil PLAI, Pôle Territorial de la Ville de Liège</p>
         <p>Différenciation ancrée sur le Référentiel de Mathématiques du tronc commun FWB</p>
       </footer>

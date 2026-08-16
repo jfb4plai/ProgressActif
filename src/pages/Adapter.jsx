@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { ANNEES, champsDisponibles } from '../lib/matieres/maths'
+import { exportNiveauxDocx } from '../lib/exportDocx'
 
 const LABELS = {
   soutien: 'Soutien',
@@ -76,8 +77,13 @@ export default function Adapter() {
     setResultat(r => ({ ...r, niveaux: { ...r.niveaux, [cle]: { ...r.niveaux[cle], enonce: texte } } }))
   }
 
+  function telechargerWord() {
+    exportNiveauxDocx({ anneeDeclaree: annee, champLabel, codeSousPoint, verification: resultat.verification, niveaux: resultat.niveaux })
+  }
+
   return (
     <div className="plai-container plai-section">
+      <div className="no-print">
       <span className="plai-badge">Différenciation par attendus — maths</span>
       <h2>Adapter un exercice</h2>
 
@@ -139,9 +145,14 @@ export default function Adapter() {
       <button className="plai-btn" onClick={generer} disabled={enCours}>
         {enCours ? 'Génération en cours…' : 'Générer les 3 niveaux'}
       </button>
+      </div>
 
       {resultat && (
-        <div style={{ marginTop: '2rem' }}>
+        <div style={{ marginTop: '2rem' }} id="zone-resultat">
+          <p className="impression-titre" style={{ display: 'none' }}>
+            ProgressActif — {annee} — {champLabel} — {codeSousPoint}
+          </p>
+
           {resultat.verification?.ecart_detecte ? (
             <div className="plai-error">
               <strong>Écart avec l'année déclarée</strong><br />
@@ -159,10 +170,15 @@ export default function Adapter() {
             ))}
           </div>
 
-          <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: '1rem' }}>
+          <p style={{ fontSize: 13, color: 'var(--text3)', margin: '1rem 0' }}>
             Chaque zone est éditable indépendamment : ajustez le vocabulaire ou le contexte de vos
             élèves avant d'imprimer ou d'enregistrer. Rien n'est sauvegardé automatiquement.
           </p>
+
+          <div className="no-print" style={{ display: 'flex', gap: '0.5rem' }}>
+            <button className="plai-btn" onClick={telechargerWord}>Télécharger en Word</button>
+            <button className="plai-btn-ghost" onClick={() => window.print()}>Imprimer / PDF</button>
+          </div>
         </div>
       )}
     </div>
