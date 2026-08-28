@@ -81,12 +81,10 @@ ${formaterSousPoint(ctx.declaree.sousPoint)}
 ${ctx.suivante ? formaterSousPoint(ctx.suivante.sousPoint) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}`
 }
 
-const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en mathématiques et en différenciation par les attendus du tronc commun.`
+export const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en mathématiques et en différenciation par les attendus du tronc commun.`
 
 export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
   return `${ROLE}
-
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
 
 ## Étape 1 — Vérification a priori
 Compare le texte de l'exercice source à l'attendu de l'année déclarée. Si l'exercice correspond
@@ -114,8 +112,6 @@ export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoi
   const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
   return `${ROLE}
 
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
-
 ## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
 ${c('soutien')}
 ${c('cible')}
@@ -133,8 +129,6 @@ ${exerciceTexte}`
 
 export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
   return `${ROLE}
-
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
 
 ## Niveau cible validé
 Attendu cible : « ${cadrage.cible.attendu_cite} »

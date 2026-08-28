@@ -122,14 +122,12 @@ ${formaterItem(ctx.declaree)}
 ${ctx.suivante ? formaterItem(ctx.suivante) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}`
 }
 
-const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en français (lecture, écriture, grammaire, vocabulaire) et en différenciation par les attendus du tronc commun.`
+export const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en français (lecture, écriture, grammaire, vocabulaire) et en différenciation par les attendus du tronc commun.`
 
 const NOTE_PLAFOND = `Attention (constat sur ce référentiel) : le texte d'un savoir-faire peut être QUASI IDENTIQUE d'une année à l'autre — le référentiel "plafonne" sur cet axe. Dans ce cas, n'invente pas de levier artificiel : utilise les DESCRIPTEURS TRANSVERSAUX (fluence en mots/minute, % de formes correctes, palier lecteur/scripteur) comme levier de calibrage réel.`
 
 export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
   return `${ROLE}
-
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
 
 ## Étape 1 — Vérification a priori
 Compare le texte de l'exercice source à l'attendu de l'année déclarée. Signale tout écart réel dans
@@ -151,8 +149,6 @@ export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoi
   const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
   return `${ROLE}
 
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
-
 ## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
 ${c('soutien')}
 ${c('cible')}
@@ -168,8 +164,6 @@ ${exerciceTexte}`
 
 export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
   return `${ROLE}
-
-${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
 
 ## Niveau cible validé
 Attendu cible : « ${cadrage.cible.attendu_cite} »

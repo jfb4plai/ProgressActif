@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { it, expect, beforeEach, vi } from 'vitest'
 import handler from './generate.js'
 import { _reset } from './_rateLimit.js'
 
@@ -9,6 +9,7 @@ function mockRes() {
     statusCode: 0, body: null,
     status(c) { this.statusCode = c; return this },
     json(b) { this.body = b; return this },
+    setHeader() { return this },
     end() { return this },
   }
 }
@@ -67,6 +68,18 @@ it('phase enonces : passe le cadrage au prompt', async () => {
   expect(res.statusCode).toBe(200)
   const sentBody = JSON.parse(global.fetch.mock.calls[0][1].body)
   expect(sentBody.system[1].text).toContain('borne à 20')
+})
+
+it('throttle des échecs d\'auth : 401 "Trop de tentatives" après 10 codes faux', async () => {
+  const bad = () => handler(
+    { method: 'POST', headers: { 'x-forwarded-for': '9.9.9.9' }, body: { ...bodyBase, codeAcces: 'FAUX', phase: 'cadrage' } },
+    mockRes(),
+  )
+  for (let i = 0; i < 10; i++) await bad()
+  const res = mockRes()
+  await handler({ method: 'POST', headers: { 'x-forwarded-for': '9.9.9.9' }, body: { ...bodyBase, codeAcces: 'FAUX', phase: 'cadrage' } }, res)
+  expect(res.statusCode).toBe(401)
+  expect(res.body.error).toMatch(/Trop de tentatives/)
 })
 
 it('phase inconnue → 400', async () => {

@@ -20,9 +20,12 @@ const PHASES = {
 }
 
 function ipDe(req) {
-  const xff = req.headers['x-forwarded-for']
-  if (xff) return String(xff).split(',')[0].trim()
-  return req.socket?.remoteAddress ?? 'inconnue'
+  const h = req.headers
+  return h['x-real-ip']
+    || (h['x-vercel-forwarded-for'] ? String(h['x-vercel-forwarded-for']).split(',')[0].trim() : null)
+    || (h['x-forwarded-for'] ? String(h['x-forwarded-for']).split(',').pop().trim() : null)
+    || req.socket?.remoteAddress
+    || 'inconnue'
 }
 
 export default async function handler(req, res) {
@@ -44,13 +47,20 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'enonces requis pour la phase grille.' })
   }
 
+  const ip = ipDe(req)
+
   const codeAttendu = process.env.PROGRESSACTIF_ACCESS_CODE
   if (!codeAttendu) return res.status(500).json({ error: 'Code d\'accès non configuré côté serveur (PROGRESSACTIF_ACCESS_CODE).' })
-  if (codeAcces !== codeAttendu) return res.status(401).json({ error: 'Code d\'accès invalide.' })
+  if (codeAcces !== codeAttendu) {
+    // Bucket auth séparé et plus strict : ralentit le brute-force sur le code partagé.
+    // Consommé uniquement en cas d'échec (le succès ne pénalise pas l'IP).
+    const authQuota = verifierQuota('auth:' + ip, 10, 10 * 60 * 1000)
+    return res.status(401).json({ error: authQuota.ok ? 'Code d\'accès invalide.' : 'Trop de tentatives. Réessayez plus tard.' })
+  }
 
-  const quota = verifierQuota(ipDe(req))
+  const quota = verifierQuota(ip)
   if (!quota.ok) {
-    res.setHeader?.('Retry-After', String(quota.retryAfterS))
+    res.setHeader('Retry-After', String(quota.retryAfterS))
     return res.status(429).json({ error: `Trop de générations récentes. Réessayez dans ~${Math.ceil(quota.retryAfterS / 60)} min.` })
   }
 
@@ -62,6 +72,7 @@ export default async function handler(req, res) {
 
   const conf = PHASES[phase]
   const contexte = module.blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
+  const prefixeStable = `${module.ROLE}\n\n${contexte}`
   const promptPhase = conf.build(module, { anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage, enonces })
 
   try {
@@ -75,10 +86,10 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: conf.maxTokens,
-        // system[0] = bloc contexte identique aux 3 phases → mis en cache.
-        // system[1] = instructions propres à la phase (dont le cadrage injecté).
+        // system[0] = préfixe stable (rôle + contexte référentiel), candidat au prompt caching.
+        // system[1] = instructions variables de la phase.
         system: [
-          { type: 'text', text: contexte, cache_control: { type: 'ephemeral' } },
+          { type: 'text', text: prefixeStable, cache_control: { type: 'ephemeral' } },
           { type: 'text', text: promptPhase },
         ],
         output_config: { format: { type: 'json_schema', schema: conf.schema } },

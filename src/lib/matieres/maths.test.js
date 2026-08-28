@@ -17,8 +17,8 @@ const base = {
 describe('construirePromptCadrage', () => {
   it('contient le contexte référentiel et interdit la rédaction d\'énoncé', () => {
     const p = construirePromptCadrage(base)
-    expect(p).toContain('Contexte référentiel')
-    expect(p).toContain('Année déclarée')
+    expect(p).toContain('Étape 1 — Vérification a priori')
+    expect(p).toContain('Étape 2 — Cadrage des 3 niveaux')
     expect(p.toLowerCase()).toContain('ne rédige aucun énoncé')
   })
   it('ne contient pas les instructions de rédaction d\'énoncé', () => {

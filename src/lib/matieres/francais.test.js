@@ -12,7 +12,8 @@ const base = { anneeDeclaree: 'P3', champLabel, codeSousPoint: '0', exerciceText
 describe('francais — cadrage', () => {
   it('contient le contexte et interdit la rédaction d\'énoncé', () => {
     const p = construirePromptCadrage(base)
-    expect(p).toContain('Contexte référentiel')
+    expect(p).toContain('Étape 1 — Vérification a priori')
+    expect(p).toContain('Étape 2 — Cadrage des 3 niveaux')
     expect(p.toLowerCase()).toContain('ne rédige aucun énoncé')
   })
   it('mentionne les descripteurs transversaux comme levier possible', () => {
