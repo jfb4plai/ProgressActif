@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import * as Maths from '../lib/matieres/maths'
 import * as Francais from '../lib/matieres/francais'
 import { exportNiveauxDocx } from '../lib/exportDocx'
@@ -37,9 +37,15 @@ function BarreProgression({ phase }) {
 }
 
 function CadrageCard({ cle, niveau, options, onChange }) {
-  const optionIA = options.some(o => o.texte === niveau.attendu_cite)
-    ? null
-    : niveau.attendu_cite
+  const optionIA = options.some(o => o.texte === niveau.attendu_cite) ? null : niveau.attendu_cite
+  const parAnnee = options.reduce((acc, o) => { (acc[o.annee] ??= []).push(o); return acc }, {})
+
+  function choisirAttendu(texte) {
+    onChange(cle, 'attendu_cite', texte)
+    const match = options.find(o => o.texte === texte)
+    if (match) onChange(cle, 'annee_reference', match.annee)
+  }
+
   return (
     <div className="plai-card">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 8 }}>
@@ -47,26 +53,33 @@ function CadrageCard({ cle, niveau, options, onChange }) {
         <span style={{ fontSize: 12, color: 'var(--text3)' }}>{niveau.annee_reference}</span>
       </div>
 
-      <label className="plai-label" style={{ fontSize: 13 }}>Attendu de référence</label>
+      <label className="plai-label" htmlFor={`attendu-${cle}`} style={{ fontSize: 13 }}>Attendu de référence</label>
       <select
+        id={`attendu-${cle}`}
         className="plai-input"
+        aria-label={`Attendu de référence — ${LABELS[cle]}`}
         value={niveau.attendu_cite}
-        onChange={e => onChange(cle, 'attendu_cite', e.target.value)}
+        onChange={e => choisirAttendu(e.target.value)}
         style={{ fontSize: 13 }}
       >
         {optionIA && <option value={optionIA}>{optionIA} — proposé par l'IA, non trouvé tel quel dans le référentiel</option>}
-        {options.map((o, i) => (
-          <option key={i} value={o.texte}>[{o.annee}] {o.texte}</option>
+        {Object.entries(parAnnee).map(([annee, opts]) => (
+          <optgroup key={annee} label={annee}>
+            {opts.map((o, i) => <option key={i} value={o.texte}>{o.texte}</option>)}
+          </optgroup>
         ))}
       </select>
       <p style={{ fontSize: 12, color: 'var(--text3)', margin: '4px 0 10px' }}>
         L'attendu du référentiel FWB sur lequel ce palier s'ancre. L'IA en propose un ; changez-le
-        si un autre décrit mieux ce que l'élève doit produire à ce niveau.
+        si un autre décrit mieux ce que l'élève doit produire à ce niveau. L'année affichée suit
+        l'attendu choisi.
       </p>
 
-      <label className="plai-label" style={{ fontSize: 13 }}>Levier de différenciation</label>
+      <label className="plai-label" htmlFor={`levier-${cle}`} style={{ fontSize: 13 }}>Levier de différenciation</label>
       <textarea
+        id={`levier-${cle}`}
         className="plai-input"
+        aria-label={`Levier de différenciation — ${LABELS[cle]}`}
         rows={3}
         value={niveau.levier}
         onChange={e => onChange(cle, 'levier', e.target.value)}
@@ -92,13 +105,20 @@ function NiveauCard({ cle, niveau, onChangeEnonce }) {
         « {niveau.attendu_cite} »
       </p>
       <p style={{ fontSize: 12, color: 'var(--text3)', marginBottom: 10 }}>Levier validé : {niveau.levier}</p>
+      <label className="plai-label" htmlFor={`enonce-${cle}`} style={{ fontSize: 13 }}>Énoncé de l'exercice</label>
       <textarea
+        id={`enonce-${cle}`}
         className="plai-input"
+        aria-label={`Énoncé — ${LABELS[cle]}`}
         rows={10}
         value={niveau.enonce}
         onChange={e => onChangeEnonce(cle, e.target.value)}
+        placeholder="Ex. : « Léa a 8 billes. Elle en gagne 5. Combien en a-t-elle ? »"
         style={{ fontSize: 14 }}
       />
+      <p style={{ fontSize: 12, color: 'var(--text3)', marginTop: 4 }}>
+        Le texte que l'élève recevra. Ajustez-le au vocabulaire de vos élèves avant d'imprimer.
+      </p>
     </div>
   )
 }
@@ -142,6 +162,10 @@ export default function Adapter() {
   const [enonces, setEnonces] = useState(null)
   const [grille, setGrille] = useState(null)
 
+  // Jeton de requête : toute réponse dont le jeton ne correspond plus à
+  // reqId.current est ignorée (édition amont pendant un appel en vol).
+  const reqId = useRef(0)
+
   const conf = MATIERES[matiere]
   const champs = useMemo(() => conf.module.champsDisponibles(annee), [conf, annee])
   const sousPoints = useMemo(
@@ -154,6 +178,7 @@ export default function Adapter() {
   }, [conf, annee, champLabel, codeSousPoint])
 
   function resetAval(depuis) {
+    reqId.current++
     if (depuis === 'idle') { setVerification(null); setCadrage(null); setEnonces(null); setGrille(null); setPhase('idle') }
     if (depuis === 'cadrage') { setEnonces(null); setGrille(null) }
     if (depuis === 'enonces') { setGrille(null) }
@@ -164,6 +189,7 @@ export default function Adapter() {
   function changerChamp(v) { setChampLabel(v); setCodeSousPoint(''); resetAval('idle') }
   function changerSousPoint(v) { setCodeSousPoint(v); resetAval('idle') }
   function changerExercice(v) { setExerciceTexte(v); if (phase !== 'idle') resetAval('idle') }
+  function reprendreSource() { resetAval('idle') }
 
   async function appelPhase(nomPhase, corps) {
     const codeAcces = sessionStorage.getItem(CLE_CODE_ACCES) ?? ''
@@ -172,12 +198,13 @@ export default function Adapter() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ matiere, anneeDeclaree: annee, champLabel, codeSousPoint, codeAcces, phase: nomPhase, ...corps }),
     })
-    const data = await resp.json()
+    const data = await resp.json().catch(() => ({}))
     if (resp.status === 401) {
-      sessionStorage.removeItem(CLE_CODE_ACCES)
-      throw new Error('Code d\'accès invalide ou expiré. Rechargez la page pour le ressaisir.')
+      // Ne pas effacer un code valide qui a juste déclenché le verrou anti-bruteforce.
+      if (!/tentative/i.test(data.error ?? '')) sessionStorage.removeItem(CLE_CODE_ACCES)
+      throw new Error(data.error ?? 'Code d\'accès invalide ou expiré. Rechargez la page pour le ressaisir.')
     }
-    if (resp.status === 429) throw new Error(data.error)
+    if (resp.status === 429) throw new Error(data.error ?? 'Trop de générations récentes. Réessayez dans quelques minutes.')
     if (!resp.ok) throw new Error(data.error ?? 'Erreur inconnue')
     return data.resultat
   }
@@ -189,32 +216,38 @@ export default function Adapter() {
       return
     }
     setEnCours(true)
+    const id = ++reqId.current
     try {
       const r = await appelPhase('cadrage', { exerciceTexte })
+      if (id !== reqId.current) return
       setVerification(r.verification)
       setCadrage(r.cadrage)
       setEnonces(null); setGrille(null)
       setPhase('cadrageReview')
-    } catch (e) { setErreur(e.message) } finally { setEnCours(false) }
+    } catch (e) { if (id === reqId.current) setErreur(e.message) } finally { if (id === reqId.current) setEnCours(false) }
   }
 
   async function genererEnonces() {
     setErreur(''); setEnCours(true)
+    const id = ++reqId.current
     try {
       const r = await appelPhase('enonces', { exerciceTexte, cadrage })
+      if (id !== reqId.current) return
       setEnonces(r.enonces)
       setGrille(null)
       setPhase('enoncesReview')
-    } catch (e) { setErreur(e.message) } finally { setEnCours(false) }
+    } catch (e) { if (id === reqId.current) setErreur(e.message) } finally { if (id === reqId.current) setEnCours(false) }
   }
 
   async function genererGrille() {
     setErreur(''); setEnCours(true)
+    const id = ++reqId.current
     try {
       const r = await appelPhase('grille', { cadrage, enonces })
+      if (id !== reqId.current) return
       setGrille(r.grille)
       setPhase('resultat')
-    } catch (e) { setErreur(e.message) } finally { setEnCours(false) }
+    } catch (e) { if (id === reqId.current) setErreur(e.message) } finally { if (id === reqId.current) setEnCours(false) }
   }
 
   function modifierCadrage(cle, champ, valeur) {
@@ -237,8 +270,11 @@ export default function Adapter() {
   }, [phase, verification, cadrage, enonces, grille])
 
   function telechargerWord() {
+    if (!resultat) return
     exportNiveauxDocx({ anneeDeclaree: annee, champLabel, codeSousPoint, verification: resultat.verification, niveaux: resultat.niveaux, grille: resultat.grille })
   }
+
+  const sourceVerrouillee = phase !== 'idle'
 
   return (
     <div className="plai-container plai-section">
@@ -248,9 +284,15 @@ export default function Adapter() {
 
         {erreur && <div className="plai-error">{erreur}</div>}
 
+        {sourceVerrouillee && (
+          <button className="plai-btn-ghost no-print" style={{ marginBottom: '1rem' }} onClick={reprendreSource}>
+            Modifier l'exercice source (efface le cadrage, les énoncés et la grille)
+          </button>
+        )}
+
         <div className="plai-field">
           <label className="plai-label" htmlFor="matiere">Matière</label>
-          <select id="matiere" className="plai-input" value={matiere} onChange={e => changerMatiere(e.target.value)}>
+          <select id="matiere" className="plai-input" value={matiere} disabled={sourceVerrouillee} onChange={e => changerMatiere(e.target.value)}>
             {Object.entries(MATIERES).map(([key, m]) => <option key={key} value={key}>{m.label}</option>)}
           </select>
           <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
@@ -260,7 +302,7 @@ export default function Adapter() {
 
         <div className="plai-field">
           <label className="plai-label" htmlFor="annee">Année de la classe</label>
-          <select id="annee" className="plai-input" value={annee} onChange={e => changerAnnee(e.target.value)}>
+          <select id="annee" className="plai-input" value={annee} disabled={sourceVerrouillee} onChange={e => changerAnnee(e.target.value)}>
             {conf.module.ANNEES.map(a => <option key={a} value={a}>{a}</option>)}
           </select>
           <p style={{ fontSize: 13, color: 'var(--text3)', marginTop: 4 }}>
@@ -270,7 +312,7 @@ export default function Adapter() {
 
         <div className="plai-field">
           <label className="plai-label" htmlFor="champ">{conf.labelChamp}</label>
-          <select id="champ" className="plai-input" value={champLabel} onChange={e => changerChamp(e.target.value)}>
+          <select id="champ" className="plai-input" value={champLabel} disabled={sourceVerrouillee} onChange={e => changerChamp(e.target.value)}>
             <option value="">— choisir —</option>
             {champs.map(c => <option key={c.champ} value={c.champ}>{c.champ}{c.titre ? ` — ${c.titre}` : ''}</option>)}
           </select>
@@ -280,7 +322,7 @@ export default function Adapter() {
         {champLabel && (
           <div className="plai-field">
             <label className="plai-label" htmlFor="sousPoint">{conf.labelSousPoint}</label>
-            <select id="sousPoint" className="plai-input" value={codeSousPoint} onChange={e => changerSousPoint(e.target.value)}>
+            <select id="sousPoint" className="plai-input" value={codeSousPoint} disabled={sourceVerrouillee} onChange={e => changerSousPoint(e.target.value)}>
               <option value="">— choisir —</option>
               {sousPoints.map(sp => <option key={sp.code} value={sp.code}>{sp.titre}</option>)}
             </select>
@@ -294,6 +336,7 @@ export default function Adapter() {
             id="exercice"
             className="plai-input"
             rows={6}
+            disabled={sourceVerrouillee}
             placeholder={matiere === 'maths'
               ? 'Ex. : "Léa a 8 billes. Elle en gagne 5 pendant la récré. Combien de billes a-t-elle maintenant ?"'
               : 'Ex. : "Quel pronom remplace Nolan ? ......."'}
@@ -305,9 +348,11 @@ export default function Adapter() {
           </p>
         </div>
 
-        <button className="plai-btn" onClick={genererCadrage} disabled={enCours}>
-          {enCours && phase === 'idle' ? 'Cadrage en cours…' : 'Générer le cadrage'}
-        </button>
+        {!sourceVerrouillee && (
+          <button className="plai-btn" onClick={genererCadrage} disabled={enCours}>
+            {enCours ? 'Cadrage en cours…' : 'Générer le cadrage'}
+          </button>
+        )}
       </div>
 
       {phase !== 'idle' && (
