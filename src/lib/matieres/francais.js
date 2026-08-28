@@ -127,9 +127,7 @@ export const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en franç
 const NOTE_PLAFOND = `Attention (constat sur ce référentiel) : le texte d'un savoir-faire peut être QUASI IDENTIQUE d'une année à l'autre — le référentiel "plafonne" sur cet axe. Dans ce cas, n'invente pas de levier artificiel : utilise les DESCRIPTEURS TRANSVERSAUX (fluence en mots/minute, % de formes correctes, palier lecteur/scripteur) comme levier de calibrage réel.`
 
 export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
-  return `${ROLE}
-
-## Étape 1 — Vérification a priori
+  return `## Étape 1 — Vérification a priori
 Compare le texte de l'exercice source à l'attendu de l'année déclarée. Signale tout écart réel dans
 "verification". ${NOTE_PLAFOND}
 Si un item est marqué absent pour une année adjacente, ne fabrique pas d'attendu — dis-le.
@@ -147,9 +145,7 @@ ${exerciceTexte}`
 
 export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage }) {
   const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
-  return `${ROLE}
-
-## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
+  return `## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
 ${c('soutien')}
 ${c('cible')}
 ${c('depassement')}
@@ -163,9 +159,7 @@ ${exerciceTexte}`
 }
 
 export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
-  return `${ROLE}
-
-## Niveau cible validé
+  return `## Niveau cible validé
 Attendu cible : « ${cadrage.cible.attendu_cite} »
 Énoncé cible : ${enonces.cible.enonce}
 
@@ -181,9 +175,19 @@ export function optionsCadrage({ anneeDeclaree, champLabel, codeSousPoint }) {
   const out = []
   for (const key of ['precedente', 'declaree', 'suivante']) {
     const entry = ctx[key]
-    if (!entry || !entry.existe || !entry.item) continue
+    if (!entry) continue
+    // Descripteurs transversaux : le prompt de cadrage EXIGE de s'y rabattre quand le
+    // référentiel plafonne (NOTE_PLAFOND). Ils doivent donc être des ancrages valides.
+    const d = entry.descripteurs
+    if (d) {
+      if (d.fluence_lecture_mots_par_minute) out.push({ annee: entry.annee, texte: `fluence ≈ ${d.fluence_lecture_mots_par_minute} mots/min`, source: 'descripteur' })
+      if (d.pourcentage_formes_correctes_ecriture) out.push({ annee: entry.annee, texte: `${d.pourcentage_formes_correctes_ecriture}% de formes correctes en écriture`, source: 'descripteur' })
+      if (d.palier_lecteur_attendu) out.push({ annee: entry.annee, texte: `palier lecteur : ${d.palier_lecteur_attendu}`, source: 'descripteur' })
+      if (d.palier_scripteur_attendu) out.push({ annee: entry.annee, texte: `palier scripteur : ${d.palier_scripteur_attendu}`, source: 'descripteur' })
+    }
+    if (!entry.existe || !entry.item) continue
     for (const att of entry.item.attendus ?? []) {
-      out.push({ annee: entry.annee, texte: att })
+      out.push({ annee: entry.annee, texte: att, source: 'attendu' })
     }
   }
   return out

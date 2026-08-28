@@ -84,9 +84,7 @@ ${ctx.suivante ? formaterSousPoint(ctx.suivante.sousPoint) : 'N/A (P6 est la der
 export const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en mathématiques et en différenciation par les attendus du tronc commun.`
 
 export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
-  return `${ROLE}
-
-## Étape 1 — Vérification a priori
+  return `## Étape 1 — Vérification a priori
 Compare le texte de l'exercice source à l'attendu de l'année déclarée. Si l'exercice correspond
 mieux à l'attendu d'une année voisine, signale-le dans "verification". Ne masque jamais un écart réel.
 Si le sous-point est absent d'une année adjacente (marqué "N/A"), ne fabrique pas d'attendu — dis-le.
@@ -110,9 +108,7 @@ ${exerciceTexte}`
 
 export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage }) {
   const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
-  return `${ROLE}
-
-## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
+  return `## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
 ${c('soutien')}
 ${c('cible')}
 ${c('depassement')}
@@ -128,9 +124,7 @@ ${exerciceTexte}`
 }
 
 export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
-  return `${ROLE}
-
-## Niveau cible validé
+  return `## Niveau cible validé
 Attendu cible : « ${cadrage.cible.attendu_cite} »
 Énoncé cible : ${enonces.cible.enonce}
 
@@ -150,9 +144,13 @@ export function optionsCadrage({ anneeDeclaree, champLabel, codeSousPoint }) {
   for (const key of ['precedente', 'declaree', 'suivante']) {
     const entry = ctx[key]
     if (!entry || !entry.sousPoint) continue
+    // Le prompt de cadrage autorise à citer le contexte_annuel, pas seulement les attendus.
+    if (entry.sousPoint.contexte_annuel) {
+      out.push({ annee: entry.annee, texte: entry.sousPoint.contexte_annuel, source: 'contexte' })
+    }
     for (const it of entry.sousPoint.items ?? []) {
       for (const att of it.attendus ?? []) {
-        out.push({ annee: entry.annee, texte: att })
+        out.push({ annee: entry.annee, texte: att, source: 'attendu' })
       }
     }
   }

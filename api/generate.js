@@ -47,6 +47,15 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'enonces requis pour la phase grille.' })
   }
 
+  const CLES = ['soutien', 'cible', 'depassement']
+  if ((phase === 'enonces' || phase === 'grille') &&
+      !CLES.every(n => cadrage?.[n]?.attendu_cite && cadrage[n]?.annee_reference)) {
+    return res.status(400).json({ error: 'cadrage incomplet (chaque niveau doit avoir annee_reference + attendu_cite).' })
+  }
+  if (phase === 'grille' && !CLES.every(n => enonces?.[n]?.enonce)) {
+    return res.status(400).json({ error: 'enonces incomplet (chaque niveau doit avoir un enonce).' })
+  }
+
   const ip = ipDe(req)
 
   const codeAttendu = process.env.PROGRESSACTIF_ACCESS_CODE
@@ -71,11 +80,12 @@ export default async function handler(req, res) {
   if (!apiKey) return res.status(500).json({ error: 'Clé API manquante (ANTHROPIC_API_KEY)' })
 
   const conf = PHASES[phase]
-  const contexte = module.blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
-  const prefixeStable = `${module.ROLE}\n\n${contexte}`
-  const promptPhase = conf.build(module, { anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage, enonces })
 
   try {
+    const contexte = module.blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
+    const prefixeStable = `${module.ROLE}\n\n${contexte}`
+    const promptPhase = conf.build(module, { anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage, enonces })
+
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {

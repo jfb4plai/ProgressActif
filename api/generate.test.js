@@ -28,8 +28,8 @@ beforeEach(() => {
 })
 
 const bodyBase = {
-  matiere: 'maths', anneeDeclaree: 'P3', champLabel: 'Nombres',
-  codeSousPoint: '1.1', exerciceTexte: 'Léa a 8 billes...', codeAcces: 'SECRET',
+  matiere: 'maths', anneeDeclaree: 'P3', champLabel: 'Champ 3',
+  codeSousPoint: '3.2', exerciceTexte: 'Léa a 8 billes...', codeAcces: 'SECRET',
 }
 
 it('refuse un code d\'accès invalide', async () => {

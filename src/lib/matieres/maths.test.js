@@ -15,7 +15,7 @@ const base = {
 }
 
 describe('construirePromptCadrage', () => {
-  it('contient le contexte référentiel et interdit la rédaction d\'énoncé', () => {
+  it('contient les étapes de cadrage et interdit la rédaction d\'énoncé', () => {
     const p = construirePromptCadrage(base)
     expect(p).toContain('Étape 1 — Vérification a priori')
     expect(p).toContain('Étape 2 — Cadrage des 3 niveaux')
