@@ -62,7 +62,7 @@ function trouverItem(annee, groupeLabel, contenuCible) {
   return groupe.items.find(it => it.contenu === contenuCible) ?? null
 }
 
-function contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint }) {
+export function contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint }) {
   const avant = anneePrecedente(anneeDeclaree)
   const apres = anneeSuivante(anneeDeclaree)
 
@@ -105,17 +105,9 @@ function formaterItem(entry) {
   return `${annee} — ${typeTxt}${item.contenu}${viseesTxt}\nAttendus : ${item.attendus.join(' | ')}\n${descripteursTxt}`
 }
 
-// Prompt système du générateur français — même exigence de rigueur que maths.js,
-// mais intègre la leçon du test manuel de session : un savoir-faire peut plafonner
-// d'une année à l'autre (texte d'attendu quasi identique), auquel cas le vrai levier
-// de calibrage se trouve dans les descripteurs transversaux (fluence, % de formes
-// correctes, complexité de texte), pas dans le sous-point lui-même.
-export function construirePromptSysteme({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
+export function blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint }) {
   const ctx = contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
-
-  return `Tu es un conseiller pédagogique FWB spécialisé en français (lecture, écriture, grammaire, vocabulaire) et en différenciation par les attendus du tronc commun.
-
-## Contexte référentiel (source unique de vérité — ne rien inventer au-delà)
+  return `## Contexte référentiel (source unique de vérité — ne rien inventer au-delà)
 
 Année déclarée par l'enseignant : ${anneeDeclaree}
 Rubrique : ${champLabel}
@@ -127,50 +119,78 @@ ${ctx.precedente ? formaterItem(ctx.precedente) : 'N/A (P1 est la première ann�
 ${formaterItem(ctx.declaree)}
 
 ### Année suivante
-${ctx.suivante ? formaterItem(ctx.suivante) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}
+${ctx.suivante ? formaterItem(ctx.suivante) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}`
+}
 
-## Étape 1 — Vérification a priori (obligatoire, avant toute génération)
+const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en français (lecture, écriture, grammaire, vocabulaire) et en différenciation par les attendus du tronc commun.`
 
-Compare le texte de l'exercice source à l'attendu de l'année déclarée.
+const NOTE_PLAFOND = `Attention (constat sur ce référentiel) : le texte d'un savoir-faire peut être QUASI IDENTIQUE d'une année à l'autre — le référentiel "plafonne" sur cet axe. Dans ce cas, n'invente pas de levier artificiel : utilise les DESCRIPTEURS TRANSVERSAUX (fluence en mots/minute, % de formes correctes, palier lecteur/scripteur) comme levier de calibrage réel.`
 
-Attention particulière (constat établi sur ce référentiel) : le texte d'un savoir-faire peut être
-QUASI IDENTIQUE d'une année à l'autre — ce n'est pas une erreur d'extraction, c'est le référentiel qui
-"plafonne" sur cet axe précis (ex. la reprise par pronom personnel ne change pas de formulation entre P2
-et P3 côté production). Dans ce cas, ne force jamais un levier artificiel sur le sous-point lui-même :
-utilise les DESCRIPTEURS TRANSVERSAUX (fluence en mots/minute, % de formes correctes en écriture, palier
-lecteur/scripteur) comme levier de calibrage réel, en priorité pour le dépassement, mais aussi pour le
-soutien si le référentiel le permet (ex. accepter davantage d'aide, un texte support plus court/simple).
+export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
+  return `${ROLE}
 
-Si un item est marqué absent pour une année adjacente, ne fabrique pas un attendu — dis-le, et construis
-ce palier sur la base du contexte annuel ou des descripteurs transversaux disponibles.
+${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
 
-## Étape 2 — Génération des 3 niveaux
+## Étape 1 — Vérification a priori
+Compare le texte de l'exercice source à l'attendu de l'année déclarée. Signale tout écart réel dans
+"verification". ${NOTE_PLAFOND}
+Si un item est marqué absent pour une année adjacente, ne fabrique pas d'attendu — dis-le.
 
-Pour chaque niveau (soutien / cible / dépassement), tu DOIS :
-- citer explicitement l'attendu exact sur lequel tu t'appuies (traçabilité) — ou, si le levier vient des
-  descripteurs transversaux, citer le descripteur exact (ex. "fluence ≈110 mots/min en P4" ou "80% de
-  formes correctes attendues en P6")
-- ne jamais te contenter d'un changement générique de longueur de texte sans justification référentielle
-- si le sous-point plafonne, l'assumer et l'expliquer dans "levier" plutôt que d'inventer une différence
-  qui n'existe pas dans le texte du référentiel
+## Étape 2 — Cadrage des 3 niveaux (PAS d'énoncé)
+Pour chaque niveau, détermine annee_reference, attendu_cite (citation EXACTE de l'attendu OU du
+descripteur transversal utilisé) et levier (une phrase : ce qui change réellement à ce palier).
+Si le sous-point plafonne, l'assumer et l'expliquer dans "levier" via un descripteur transversal.
 
-## Étape 3 — Grille d'évaluation (attendu cible uniquement)
+NE RÉDIGE AUCUN ÉNONCÉ D'EXERCICE à cette étape. Sortie contrainte par un schéma JSON.
 
-Construis une grille de 3 à 6 critères observables, décomposés à partir du texte exact de l'attendu (ou
-descripteur transversal) cité pour le niveau CIBLE — jamais un critère générique du type "bonne
-orthographe". Si l'attendu combine plusieurs exigences (ex. réception ET production, ou plusieurs
-substituts à reconnaître), sépare-les en critères distincts, chacun avec un indicateur de réussite concret
-et cochable en classe.
-
-## Étape 4 — Sortie
-
-La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details), "niveaux.soutien/
-cible/depassement" (chacun avec annee_reference, attendu_cite (citation exacte de l'attendu OU du
-descripteur transversal utilisé), levier (une phrase : ce qui change réellement à ce palier) et enonce (le
-texte complet de l'exercice, prêt à être relu)), puis "grille" (attendu_cite identique à celui du niveau
-cible, et criteres[] issus de l'étape 3). Le résultat sera relu et édité par l'enseignant avant tout usage.
-
-## Exercice source à traiter
-
+## Exercice source à cadrer
 ${exerciceTexte}`
+}
+
+export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage }) {
+  const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
+  return `${ROLE}
+
+${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
+
+## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
+${c('soutien')}
+${c('cible')}
+${c('depassement')}
+
+## Tâche
+Rédige les 3 énoncés d'exercice fidèles au cadrage et à l'attendu cité. Tu appliques le levier,
+tu ne le renégocies pas. Sortie contrainte par un schéma JSON (enonces.soutien/cible/depassement).
+
+## Exercice source de référence
+${exerciceTexte}`
+}
+
+export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
+  return `${ROLE}
+
+${blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })}
+
+## Niveau cible validé
+Attendu cible : « ${cadrage.cible.attendu_cite} »
+Énoncé cible : ${enonces.cible.enonce}
+
+## Tâche — Étape 3 : grille d'évaluation
+Grille de 3 à 6 critères observables, décomposés à partir du texte EXACT de l'attendu (ou
+descripteur) cible. Si l'attendu combine plusieurs exigences (réception ET production, plusieurs
+substituts...), sépare-les en critères distincts, chacun avec un indicateur cochable en classe.
+"grille.attendu_cite" identique à l'attendu cible. Sortie contrainte par un schéma JSON.`
+}
+
+export function optionsCadrage({ anneeDeclaree, champLabel, codeSousPoint }) {
+  const ctx = contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
+  const out = []
+  for (const key of ['precedente', 'declaree', 'suivante']) {
+    const entry = ctx[key]
+    if (!entry || !entry.existe || !entry.item) continue
+    for (const att of entry.item.attendus ?? []) {
+      out.push({ annee: entry.annee, texte: att })
+    }
+  }
+  return out
 }
