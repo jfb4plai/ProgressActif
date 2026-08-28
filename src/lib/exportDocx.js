@@ -68,6 +68,13 @@ function niveauSection(cle, niveau) {
       children: [new TextRun({ text: `« ${niveau.attendu_cite} »`, italics: true, size: 20, color: GRAY_TEXT })],
       spacing: { after: 160 },
     }),
+    new Paragraph({
+      children: [
+        new TextRun({ text: 'Levier de différenciation : ', bold: true, size: 20, color: GRAY_TEXT }),
+        new TextRun({ text: niveau.levier ?? '', size: 20, color: GRAY_TEXT }),
+      ],
+      spacing: { after: 120 },
+    }),
     ...parseEnonce(niveau.enonce),
   ]
 }

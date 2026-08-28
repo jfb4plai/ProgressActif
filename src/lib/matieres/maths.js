@@ -62,68 +62,97 @@ function formaterSousPoint(sp) {
   return `${sp.code} — ${sp.titre}\nContexte annuel : ${sp.contexte_annuel}\n${lignes}`
 }
 
-// Prompt système du générateur — encode tout ce que les tests manuels de la session
-// (4 exercices maths réels, PO 2005 juin 2025) ont établi comme contraintes non négociables.
-export function construirePromptSysteme({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
+// --- Bloc partagé, identique aux 3 phases → marqué pour le prompt caching côté API ---
+export function blocContexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint }) {
   const ctx = contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
-
-  return `Tu es un conseiller pédagogique FWB spécialisé en mathématiques et en différenciation par les attendus du tronc commun.
-
-## Contexte référentiel (source unique de vérité — ne rien inventer au-delà)
+  return `## Contexte référentiel (source unique de vérité — ne rien inventer au-delà)
 
 Année déclarée par l'enseignant : ${anneeDeclaree}
 Champ : ${champLabel}
 Sous-point ciblé : ${codeSousPoint}
 
 ### Année précédente (${ctx.precedente?.annee ?? 'aucune — c\'est déjà P1'})
-${ctx.precedente ? formaterSousPoint(ctx.precedente.sousPoint) : 'N/A (P1 est la première année du primaire — pas de palier "soutien" formel dans le tronc commun, s\'ancrer sur la posture maternelle si besoin).'}
+${ctx.precedente ? formaterSousPoint(ctx.precedente.sousPoint) : 'N/A (P1 est la première année du primaire — s\'ancrer sur la posture maternelle si besoin).'}
 
 ### Année déclarée (${anneeDeclaree})
 ${formaterSousPoint(ctx.declaree.sousPoint)}
 
 ### Année suivante (${ctx.suivante?.annee ?? 'aucune — c\'est déjà P6'})
-${ctx.suivante ? formaterSousPoint(ctx.suivante.sousPoint) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}
+${ctx.suivante ? formaterSousPoint(ctx.suivante.sousPoint) : 'N/A (P6 est la dernière année couverte par le corpus actuel).'}`
+}
 
-## Étape 1 — Vérification a priori (obligatoire, avant toute génération)
+export const ROLE = `Tu es un conseiller pédagogique FWB spécialisé en mathématiques et en différenciation par les attendus du tronc commun.`
 
-Compare le texte de l'exercice source à l'attendu de l'année déclarée. Si l'exercice correspond en réalité
-mieux à l'attendu de l'année précédente ou suivante (ex. un quadrillage codé donné en P2 alors que le
-codage n'est un attendu qu'à partir de P3), signale-le explicitement en premier, avant de générer quoi que
-ce soit. Ne masque jamais un écart réel pour "faire simple".
+export function construirePromptCadrage({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte }) {
+  return `## Étape 1 — Vérification a priori
+Compare le texte de l'exercice source à l'attendu de l'année déclarée. Si l'exercice correspond
+mieux à l'attendu d'une année voisine, signale-le dans "verification". Ne masque jamais un écart réel.
+Si le sous-point est absent d'une année adjacente (marqué "N/A"), ne fabrique pas d'attendu — dis-le.
 
-Si le sous-point est absent d'une année adjacente (marqué "N/A" ci-dessus), ne fabrique pas un attendu —
-dis-le, et construis ce palier sur la base du contexte annuel disponible le plus proche (y compris, pour le
-soutien, une posture pré-formelle de type maternelle si aucun attendu primaire n'existe encore).
+## Étape 2 — Cadrage des 3 niveaux (PAS d'énoncé)
+Pour chaque niveau (soutien / cible / dépassement), détermine :
+- annee_reference : l'année du référentiel sur laquelle ce palier s'ancre
+- attendu_cite : la citation EXACTE, mot pour mot, de l'attendu ou du contexte annuel utilisé
+- levier : une phrase disant ce qui change réellement par rapport à la cible (borne numérique,
+  structure de l'énoncé, exigence ajoutée, niveau de formalisation) — ce levier diffère à chaque
+  sous-point, ne le suppose jamais a priori.
+Si une compétence transversale existe déjà à un palier antérieur sous forme plus simple, ne la
+réserve pas au dépassement.
 
-## Étape 2 — Génération des 3 niveaux
+NE RÉDIGE AUCUN ÉNONCÉ D'EXERCICE à cette étape. La sortie est contrainte par un schéma JSON
+(verification + cadrage.soutien/cible/depassement).
 
-Pour chaque niveau (soutien / cible / dépassement), tu DOIS :
-- citer explicitement l'attendu ou le contexte annuel exact sur lequel tu t'appuies (traçabilité)
-- ne jamais te contenter d'augmenter ou diminuer les valeurs numériques : identifie toi-même ce qui change
-  réellement d'un palier à l'autre (borne numérique, structure de l'énoncé, exigence ajoutée, niveau de
-  formalisation) — ce levier diffère à chaque sous-point, ne le suppose jamais a priori
-- si une compétence transversale (ex. estimation, vérification de plausibilité) existe déjà à un palier
-  antérieur sous une forme plus simple, ne la réserve pas au dépassement — intègre-la sous forme adaptée
-  dès le soutien si le référentiel le permet
-
-## Étape 3 — Grille d'évaluation (attendu cible uniquement)
-
-Construis une grille de 3 à 6 critères observables, décomposés à partir du texte exact de l'attendu cité
-pour le niveau CIBLE (jamais un critère générique du type "l'élève a bien travaillé"). Chaque exigence
-mentionnée dans l'attendu (ex. "en traduisant par un dessin", "en effectuant les calculs", "en communiquant
-le résultat avec précision") devient un critère séparé, avec un indicateur de réussite concret et cochable
-en classe — pas une reformulation abstraite du critère.
-
-## Étape 4 — Sortie
-
-La réponse est contrainte par un schéma JSON : "verification" (ecart_detecte + details, citant les attendus
-en cause s'il y en a), "niveaux.soutien/cible/depassement" (chacun avec annee_reference, attendu_cite
-(citation exacte, jamais paraphrasée), levier (une phrase : ce qui change réellement à ce palier) et enonce
-(le texte complet de l'exercice, prêt à être relu)), puis "grille" (attendu_cite identique à celui du niveau
-cible, et criteres[] issus de l'étape 3). Le résultat sera relu et édité par l'enseignant avant tout usage —
-ne cherche pas la perfection finale, propose une base fidèle au référentiel et argumentée.
-
-## Exercice source à traiter
-
+## Exercice source à cadrer
 ${exerciceTexte}`
+}
+
+export function construirePromptEnonces({ anneeDeclaree, champLabel, codeSousPoint, exerciceTexte, cadrage }) {
+  const c = (n) => `- ${n} : s'ancre sur ${cadrage[n].annee_reference}, attendu « ${cadrage[n].attendu_cite} », levier : ${cadrage[n].levier}`
+  return `## Cadrage validé par l'enseignant (à respecter exactement, sans le renégocier)
+${c('soutien')}
+${c('cible')}
+${c('depassement')}
+
+## Tâche
+Rédige les 3 énoncés d'exercice (un par niveau), fidèles au cadrage ci-dessus et à l'attendu cité.
+Ne modifie pas l'ancrage ni le levier — tu les appliques. Chaque énoncé est un texte complet,
+prêt à être relu par l'enseignant. La sortie est contrainte par un schéma JSON (enonces.soutien/
+cible/depassement, chacun avec un champ "enonce").
+
+## Exercice source de référence
+${exerciceTexte}`
+}
+
+export function construirePromptGrille({ anneeDeclaree, champLabel, codeSousPoint, cadrage, enonces }) {
+  return `## Niveau cible validé
+Attendu cible : « ${cadrage.cible.attendu_cite} »
+Énoncé cible : ${enonces.cible.enonce}
+
+## Tâche — Étape 3 : grille d'évaluation (attendu cible uniquement)
+Construis une grille de 3 à 6 critères observables, décomposés à partir du texte EXACT de
+l'attendu cible. Chaque exigence mentionnée dans l'attendu devient un critère séparé, avec un
+indicateur de réussite concret et cochable en classe — pas une reformulation abstraite.
+"grille.attendu_cite" doit être identique à l'attendu cible ci-dessus. La sortie est contrainte
+par un schéma JSON.`
+}
+
+// Options du menu déroulant "attendu_cite" côté client — attendus réels du référentiel
+// pour ce sous-point aux 3 années. Aucun appel réseau.
+export function optionsCadrage({ anneeDeclaree, champLabel, codeSousPoint }) {
+  const ctx = contexteReferentiel({ anneeDeclaree, champLabel, codeSousPoint })
+  const out = []
+  for (const key of ['precedente', 'declaree', 'suivante']) {
+    const entry = ctx[key]
+    if (!entry || !entry.sousPoint) continue
+    // Le prompt de cadrage autorise à citer le contexte_annuel, pas seulement les attendus.
+    if (entry.sousPoint.contexte_annuel) {
+      out.push({ annee: entry.annee, texte: entry.sousPoint.contexte_annuel, source: 'contexte' })
+    }
+    for (const it of entry.sousPoint.items ?? []) {
+      for (const att of it.attendus ?? []) {
+        out.push({ annee: entry.annee, texte: att, source: 'attendu' })
+      }
+    }
+  }
+  return out
 }
