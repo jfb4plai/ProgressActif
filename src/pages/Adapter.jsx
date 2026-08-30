@@ -2,6 +2,10 @@ import { useState, useMemo, useRef } from 'react'
 import * as Maths from '../lib/matieres/maths'
 import * as Francais from '../lib/matieres/francais'
 import { exportNiveauxDocx } from '../lib/exportDocx'
+import { resultatVersDoc } from '../lib/export/adaptateurProgressActif'
+import { imprimerAU } from '../lib/export/impressionAU'
+import { versMarkdown } from '../lib/export/markdown'
+import { saveAs } from 'file-saver'
 import { reconstruireResultat } from '../lib/reconstruction'
 import { STORAGE_KEY as CLE_CODE_ACCES } from '../components/AccessGate'
 
@@ -274,6 +278,25 @@ export default function Adapter() {
     exportNiveauxDocx({ anneeDeclaree: annee, champLabel, codeSousPoint, verification: resultat.verification, niveaux: resultat.niveaux, grille: resultat.grille })
   }
 
+  function docCourant() {
+    return resultatVersDoc(resultat, {
+      matiereLabel: conf.label,
+      annee,
+      champLabel,
+      sousPointTitre: sousPoints.find(sp => sp.code === codeSousPoint)?.titre ?? codeSousPoint,
+    })
+  }
+
+  function imprimerFiche() {
+    if (resultat) imprimerAU(docCourant())
+  }
+
+  function telechargerMd() {
+    if (!resultat) return
+    const blob = new Blob([versMarkdown(docCourant())], { type: 'text/markdown;charset=utf-8' })
+    saveAs(blob, `ProgressActif_${annee}_${codeSousPoint}_${new Date().toISOString().slice(0, 10)}.md`)
+  }
+
   const sourceVerrouillee = phase !== 'idle'
 
   return (
@@ -404,9 +427,10 @@ export default function Adapter() {
               <p style={{ fontSize: 13, color: 'var(--text3)', margin: '1rem 0' }}>
                 Chaque zone est éditable indépendamment. Rien n'est sauvegardé automatiquement.
               </p>
-              <div className="no-print" style={{ display: 'flex', gap: '0.5rem' }}>
+              <div className="no-print" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <button className="plai-btn" onClick={telechargerWord} disabled={!resultat}>Télécharger en Word</button>
-                <button className="plai-btn-ghost" onClick={() => window.print()}>Imprimer / PDF</button>
+                <button className="plai-btn-ghost" onClick={imprimerFiche} disabled={!resultat}>Imprimer la fiche (AU)</button>
+                <button className="plai-btn-ghost" onClick={telechargerMd} disabled={!resultat}>Télécharger (.md)</button>
               </div>
             </>
           )}
