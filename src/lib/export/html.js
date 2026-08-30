@@ -12,13 +12,13 @@ export function echapper(s) {
 function blocHtml(bloc) {
   switch (bloc.type) {
     case 'paragraphe':
-      return `<p>${echapper(bloc.texte)}</p>`
+      return `<p>${echapper(bloc.texte).replace(/\n/g, '<br>')}</p>`
     case 'liste':
       return `<ul>${(bloc.items ?? []).map(i => `<li>${echapper(i)}</li>`).join('')}</ul>`
     case 'tableau': {
       const th = (bloc.entetes ?? []).map(e => `<th>${echapper(e)}</th>`).join('')
       const rows = (bloc.lignes ?? [])
-        .map(l => `<tr>${l.map(c => `<td>${echapper(c)}</td>`).join('')}</tr>`)
+        .map(l => `<tr>${(Array.isArray(l) ? l : [l]).map(c => `<td>${echapper(c)}</td>`).join('')}</tr>`)
         .join('')
       return `<table><thead><tr>${th}</tr></thead><tbody>${rows}</tbody></table>`
     }

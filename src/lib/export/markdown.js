@@ -22,15 +22,15 @@
 function blocMarkdown(bloc) {
   switch (bloc.type) {
     case 'paragraphe':
-      return `${bloc.texte ?? ''}\n`
+      return `${String(bloc.texte ?? '').split('\n').join('\n\n')}\n`
     case 'liste':
       return `${(bloc.items ?? []).map(i => `- ${i}`).join('\n')}\n`
     case 'tableau': {
-      const esc = (c) => String(c ?? '').replace(/\|/g, '\\|')
+      const esc = (c) => String(c ?? '').replace(/\r?\n/g, ' ').replace(/\|/g, '\\|')
       const entetes = bloc.entetes ?? []
       const head = `| ${entetes.map(esc).join(' | ')} |`
       const sep = `| ${entetes.map(() => '---').join(' | ')} |`
-      const lignes = (bloc.lignes ?? []).map(l => `| ${l.map(esc).join(' | ')} |`)
+      const lignes = (bloc.lignes ?? []).map(l => `| ${(Array.isArray(l) ? l : [l]).map(esc).join(' | ')} |`)
       return `${[head, sep, ...lignes].join('\n')}\n`
     }
     case 'citation':

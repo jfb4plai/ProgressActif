@@ -74,6 +74,17 @@ describe('versHtmlAU', () => {
     expect(h).toContain('<tbody><tr><td>x</td><td>&lt;y&gt;</td></tr></tbody>')
   })
 
+  it('paragraphe : sauts de ligne simples → <br>', () => {
+    const h = versHtmlAU(base({ sections: [{ titre: 'S', blocs: [{ type: 'paragraphe', texte: 'l1\nl2' }] }] }))
+    expect(h).toContain('<p>l1<br>l2</p>')
+  })
+
+  it('ligne de tableau non-array → ne lève pas', () => {
+    expect(() => versHtmlAU(base({ sections: [{ titre: 'S', blocs: [
+      { type: 'tableau', entetes: ['A'], lignes: ['notArray'] },
+    ] }] }))).not.toThrow()
+  })
+
   it('bloc de type inconnu → ignoré', () => {
     const h = versHtmlAU(base({ sections: [{ titre: 'S', blocs: [{ type: 'wtf' }, { type: 'paragraphe', texte: 'ok' }] }] }))
     expect(h).toContain('<p>ok</p>')

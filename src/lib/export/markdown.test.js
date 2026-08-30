@@ -37,6 +37,20 @@ describe('versMarkdown', () => {
     expect(md).toContain('## S\n\nBonjour.\n')
   })
 
+  it('paragraphe : sauts de ligne simples → double (paragraphes markdown)', () => {
+    const md = versMarkdown(base({ sections: [{ titre: 'S', blocs: [{ type: 'paragraphe', texte: 'l1\nl2' }] }] }))
+    expect(md).toContain('l1\n\nl2\n')
+  })
+
+  it('tableau : saut de ligne dans une cellule → espace (ligne GFM préservée)', () => {
+    const md = versMarkdown(base({ sections: [{ titre: 'S', blocs: [{ type: 'tableau', entetes: ['A'], lignes: [['x\ny']] }] }] }))
+    expect(md).toContain('| x y |')
+  })
+
+  it('tableau : ligne non-array → ne lève pas', () => {
+    expect(() => versMarkdown(base({ sections: [{ titre: 'S', blocs: [{ type: 'tableau', entetes: ['A'], lignes: ['notArray'] }] }] }))).not.toThrow()
+  })
+
   it('bloc liste', () => {
     const md = versMarkdown(base({ sections: [{ titre: 'S', blocs: [{ type: 'liste', items: ['a', 'b'] }] }] }))
     expect(md).toContain('- a\n- b\n')
