@@ -30,3 +30,11 @@ passer à un store partagé (Vercel KV) avant toute ouverture.
 - `npm test` — unitaires (schémas, prompts, reconstruction, rate limit, routage API mocké, Adapter)
 - `npm run eval:phases` — eval sur appels API réels (6 cas), `ANTHROPIC_API_KEY` +
   `PROGRESSACTIF_ACCESS_CODE` requis, à lancer manuellement après toute modif de prompt.
+
+## Licences
+
+- **Code** : [PolyForm Noncommercial 1.0.0](LICENSE). Usage non commercial uniquement.
+- **Contenus pédagogiques** : [CC BY-NC-SA 4.0](LICENSE-CONTENT.md). Réutilisation et adaptation non commerciales, avec attribution et partage dans les mêmes conditions.
+- **Logo et identité visuelle PLAI** : tous droits réservés (voir `LICENSE-CONTENT.md`).
+
+Auteur : Jean-François Beguin, Référent numérique, https://jfb4plai.com
